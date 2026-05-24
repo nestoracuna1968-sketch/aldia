@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AL DÍA — Empresas al día con la información</title>
+  <meta name="description" content="Software colombiano para descarga automática de facturas DIAN y contabilización masiva en SIIGO Nube, World Office y más. Sin digitar, sin copiar y pegar.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Poppins', 'Segoe UI', Arial, sans-serif; background: #f0f4fa; color: #1a1a2e; font-size: 17px; }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    nav {
+      background: #042C53;
+      padding: 16px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+    }
+    .logo { font-size: 26px; font-weight: 800; color: #fff; letter-spacing: 2px; }
+    .logo span { color: #5DCAA5; }
+    .nav-wa {
+      background: #25D366;
+      color: #fff;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 3px 10px rgba(37,211,102,0.35);
+    }
+    .wa-svg { width: 20px; height: 20px; fill: #fff; flex-shrink: 0; }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #021e3a 0%, #0a3d6b 60%, #0e5a8a 100%);
+      color: #fff;
+      text-align: center;
+      padding: 80px 5% 70px;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.13);
+      border: 1.5px solid rgba(255,255,255,0.25);
+      border-radius: 30px;
+      padding: 7px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #c8e0f8;
+      margin-bottom: 14px;
+    }
+    .hero h1 {
+      font-size: clamp(32px, 6vw, 52px);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 22px;
+      color: #fff;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    }
+    .hero h1 span { color: #5DCAA5; }
+    .hero p {
+      font-size: 19px;
+      color: #a8ccee;
+      max-width: 660px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+      font-weight: 400;
+    }
+    .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-green {
+      background: #25D366;
+      color: #fff;
+      padding: 16px 34px;
+      border-radius: 10px;
+      font-size: 17px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(37,211,102,0.4);
+    }
+    .btn-outline {
+      background: transparent;
+      color: #c8e0f8;
+      padding: 16px 34px;
+      border-radius: 10px;
+      font-size: 17px;
+      font-weight: 600;
+      border: 2px solid #4A9AD4;
+      cursor: pointer;
+    }
+
+    /* SECTION */
+    section { padding: 70px 5%; }
+    .section-label {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #185FA5;
+    }
+    h2 { font-size: 34px; font-weight: 800; color: #042C53; margin-bottom: 14px; line-height: 1.2; }
+    .subtitle { font-size: 18px; color: #4a5568; line-height: 1.7; max-width: 580px; margin-bottom: 44px; }
+
+    /* FEATURES */
+    .features { background: #fff; }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+    }
+    .feature-card {
+      background: #f7f9fc;
+      border-radius: 14px;
+      padding: 28px 24px;
+      border-top: 5px solid #185FA5;
+      transition: transform .15s;
+    }
+    .feature-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.09); }
+    .feature-card.c-green  { border-top-color: #1D9E75; }
+    .feature-card.c-orange { border-top-color: #E8760A; }
+    .feature-card.c-purple { border-top-color: #7C3FA0; }
+    .feature-card.c-teal   { border-top-color: #0D8A8A; }
+    .feature-card.c-red    { border-top-color: #D94F3A; }
+    .feature-card.c-gold   { border-top-color: #C98A00; }
+    .feature-card.c-gray   { border-top-color: #8A9BB5; opacity:.85; }
+    .feature-icon {
+      font-size: 36px;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .feature-card h3 { font-size: 17px; font-weight: 700; color: #042C53; margin-bottom: 10px; }
+    .feature-card p  { font-size: 15px; color: #4a5568; line-height: 1.6; }
+
+    /* HOW */
+    .how { background: linear-gradient(160deg,#eaf2fb 0%,#f0f4fa 100%); }
+    .how .section-label { color: #1D9E75; }
+    .how h2 { color: #042C53; }
+    .steps { display: flex; flex-direction: column; gap: 24px; max-width: 660px; }
+    .step { display: flex; gap: 22px; align-items: flex-start; }
+    .step-num {
+      min-width: 48px; height: 48px;
+      background: linear-gradient(135deg,#185FA5,#0e3d72);
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 20px;
+      box-shadow: 0 4px 12px rgba(24,95,165,0.35);
+      flex-shrink: 0;
+    }
+    .step h3 { font-size: 18px; font-weight: 700; color: #042C53; margin-bottom: 6px; }
+    .step p  { font-size: 16px; color: #4a5568; line-height: 1.6; }
+
+    /* PRICING */
+    .pricing { background: #fff; }
+    .pricing .section-label { color: #E8760A; }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 18px;
+      max-width: 920px;
+    }
+    .price-card {
+      border: 2px solid #dde3ef;
+      border-radius: 14px;
+      padding: 28px 18px;
+      text-align: center;
+      background: #fff;
+      transition: transform .15s;
+    }
+    .price-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+    .price-card.popular {
+      border-color: #185FA5;
+      border-width: 3px;
+      background: linear-gradient(160deg,#EEF4FB,#deeaf8);
+    }
+    .popular-badge {
+      display: inline-block;
+      background: linear-gradient(90deg,#185FA5,#0e3d72);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .price-card .plan { font-size: 14px; color: #666; margin-bottom: 8px; font-weight: 600; }
+    .price-card .amount { font-size: 26px; font-weight: 800; color: #042C53; }
+    .price-card .amount span { font-size: 14px; font-weight: 500; color: #888; }
+    .price-card .desc { font-size: 13px; color: #666; margin-top: 10px; line-height: 1.5; }
+
+    /* CTA */
+    .cta {
+      background: linear-gradient(135deg, #0b5e47 0%, #042C53 100%);
+      color: #fff;
+      text-align: center;
+      padding: 70px 5%;
+    }
+    .cta h2 { color: #fff; font-size: 36px; margin-bottom: 14px; }
+    .cta p { color: #7ee8c5; font-size: 19px; margin-bottom: 32px; font-weight: 400; }
+    .cta-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #25D366;
+      color: #fff;
+      padding: 18px 40px;
+      border-radius: 12px;
+      font-size: 20px;
+      font-weight: 800;
+      box-shadow: 0 6px 24px rgba(37,211,102,0.4);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #021e3a;
+      color: #7aaccf;
+      text-align: center;
+      padding: 30px 5%;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">AL<span>DÍA</span></div>
+  <a class="nav-wa" href="https://wa.me/573043045809?text=Hola,%20quiero%20información%20sobre%20AL%20DÍA" target="_blank">
+    <svg class="wa-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Solicitar prueba gratis
+  </a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">🌎 Software colombiano · DIAN · SIIGO · World Office · y más</div>
+  <div class="hero-badge" style="margin-left:8px;">✅ Sin certificado digital &nbsp;·&nbsp; ✅ Sin token &nbsp;·&nbsp; ✅ Sin trámites</div>
+  <h1>Su empresa <span>al día</span><br>con la información contable</h1>
+  <p>Descargue, contabilice y <strong style="color:#5DCAA5;">acuse ante RADIAN</strong> sus facturas electrónicas de forma automática. Compatible con <strong>SIIGO Nube, World Office</strong> y más. <strong style="color:#5DCAA5;">Sin certificado digital. Sin token. Sin llamar a nadie.</strong></p>
+  <div class="hero-btns">
+    <a class="btn-green" href="https://wa.me/573043045809?text=Quiero%20la%20prueba%20gratis%20de%20AL%20DÍA" target="_blank" style="display:inline-flex;align-items:center;gap:8px;">
+      <svg style="width:18px;height:18px;fill:#fff;flex-shrink:0;" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Prueba gratis 2 días
+    </a>
+    <a class="btn-outline" href="#precios">Ver precios</a>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section class="features">
+  <div class="section-label">¿Qué hace AL DÍA?</div>
+  <h2>Todo automático, usted solo revisa</h2>
+  <p class="subtitle">Descarga, contabiliza, acusa ante RADIAN y genera sus reportes. Todo automático. Usted solo revisa y aprueba.</p>
+  <div class="features-grid">
+    <div class="feature-card">
+      <span class="feature-icon">📥</span>
+      <h3>Descarga automática DIAN</h3>
+      <p>Entra al portal DIAN y descarga todos los XMLs y PDFs de facturas recibidas automáticamente. Sin digitar nada.</p>
+    </div>
+    <div class="feature-card c-green">
+      <span class="feature-icon">🧾</span>
+      <h3>Contabilización masiva</h3>
+      <p>Compatible con <strong>SIIGO Nube, World Office</strong> y otros software contables. Importe sus facturas sin digitar un solo campo.</p>
+    </div>
+    <div class="feature-card c-orange">
+      <span class="feature-icon">📊</span>
+      <h3>Índice Excel completo</h3>
+      <p>Genera un índice Excel con hipervínculos a cada factura, organizado por mes y por proveedor.</p>
+    </div>
+    <div class="feature-card c-purple">
+      <span class="feature-icon">🗂️</span>
+      <h3>Plantilla World Office</h3>
+      <p>Exporta las facturas en formato listo para importar en <strong>World Office</strong> con inventario o sin inventario.</p>
+    </div>
+    <div class="feature-card c-teal">
+      <span class="feature-icon">🔒</span>
+      <h3>100% local y seguro</h3>
+      <p>El programa corre en su propio computador. Sus credenciales nunca salen de su máquina.</p>
+    </div>
+    <div class="feature-card c-gold">
+      <span class="feature-icon">💻</span>
+      <h3>Sin internet permanente</h3>
+      <p>Solo necesita conexión para bajar las facturas de la DIAN. El resto funciona completamente <strong>offline</strong> en su PC.</p>
+    </div>
+    <div class="feature-card c-red">
+      <span class="feature-icon">📚</span>
+      <h3>Libros contables listos</h3>
+      <p>Genera el <strong>Libro Diario</strong> y registros de causación listos para importar en su software contable.</p>
+    </div>
+    <div class="feature-card c-red">
+      <span class="feature-icon">✅</span>
+      <h3>Acuse automático RADIAN <span style="font-size:12px;background:#fde8e5;color:#b03020;border-radius:10px;padding:3px 10px;font-weight:600;vertical-align:middle;">Próximamente</span></h3>
+      <p>Registra los eventos <strong>030, 031 y 032</strong> en RADIAN por usted. Sus facturas siempre deducibles de renta. Sin sanciones, sin perder gastos.</p>
+    </div>
+    <div class="feature-card c-gray">
+      <span class="feature-icon">📄</span>
+      <h3>Documentos equivalentes <span style="font-size:12px;background:#d0daea;color:#555;border-radius:10px;padding:3px 10px;font-weight:600;vertical-align:middle;">Próximamente</span></h3>
+      <p>POS, tiquetes de transporte, servicios públicos, peajes y más — todos en un solo proceso automático.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <div class="section-label">¿Cómo funciona?</div>
+  <h2>En 3 pasos sencillos</h2>
+  <p class="subtitle">Sin instalaciones complicadas. Sin servidores. Sin configuraciones técnicas.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div>
+        <h3>Instale el programa en su PC</h3>
+        <p>Descargue e instale AL DÍA en su computador con Windows. Listo en menos de 5 minutos.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div>
+        <h3>Solo ingrese el NIT</h3>
+        <p>Sin certificado digital, sin token, sin llamadas. Solo el NIT de la empresa. AL DÍA entra al portal DIAN, descarga todas las facturas y las organiza automáticamente.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div>
+        <h3>Revise el reporte y apruebe</h3>
+        <p>AL DÍA le muestra un preview Excel con todas las causaciones antes de registrar en SIIGO. Usted aprueba y listo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="precios">
+  <div class="section-label">Planes y precios</div>
+  <h2>Sin letra pequeña</h2>
+  <p class="subtitle">Pague según cuántas empresas maneja. Todas las funciones incluidas en todos los planes.</p>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <div class="plan">Prueba</div>
+      <div class="amount">Gratis</div>
+      <div class="desc">2 días para probar todas las funciones</div>
+    </div>
+    <div class="price-card popular">
+      <div class="popular-badge">Más popular</div>
+      <div class="plan">1 empresa</div>
+      <div class="amount">$250.000<span>/mes</span></div>
+      <div class="desc">Ideal para contadores independientes</div>
+    </div>
+    <div class="price-card">
+      <div class="plan">2 empresas</div>
+      <div class="amount">$400.000<span>/mes</span></div>
+      <div class="desc">Dos empresas en un solo programa</div>
+    </div>
+    <div class="price-card">
+      <div class="plan">3 empresas</div>
+      <div class="amount">$550.000<span>/mes</span></div>
+      <div class="desc">Tres empresas, un solo pago</div>
+    </div>
+    <div class="price-card">
+      <div class="plan">4 a 7 empresas</div>
+      <div class="amount">$800.000<span>/mes</span></div>
+      <div class="desc">Para firmas contables en crecimiento</div>
+    </div>
+    <div class="price-card">
+      <div class="plan">8 a 12 empresas</div>
+      <div class="amount">$1.100.000<span>/mes</span></div>
+      <div class="desc">Plan corporativo, máximo ahorro</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta">
+  <h2>Empiece hoy — 2 días gratis</h2>
+  <p>Sin tarjeta de crédito. Sin contratos. Solo escríbanos por WhatsApp.</p>
+  <a class="cta-wa" href="https://wa.me/573043045809?text=Hola,%20quiero%20la%20prueba%20gratis%20de%20AL%20DÍA" target="_blank">
+    <svg style="width:24px;height:24px;fill:#fff;flex-shrink:0;" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    +57 304 304 5809
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p style="font-size:15px; font-weight:600; color:#fff; margin-bottom:6px;">NESTOR ACUÑA QUINTANA</p>
+  <p>© 2026 AL DÍA &nbsp;·&nbsp; Bogotá, Colombia</p>
+  <p style="margin-top: 6px;">nestoracuna1968@gmail.com &nbsp;·&nbsp; WhatsApp: 304 304 5809</p>
+</footer>
+
+</body>
+</html>
