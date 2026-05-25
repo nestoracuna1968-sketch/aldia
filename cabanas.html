@@ -223,14 +223,17 @@
     /* ── VIDEOS ── */
     .video-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 8px;
       margin-top: 12px;
     }
+    @media(max-width:700px){
+      .video-grid { grid-template-columns: repeat(3, 1fr); }
+    }
     .video-item {
-      border-radius: 14px;
+      border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
       background: #000;
       aspect-ratio: 9/16;
     }
@@ -565,25 +568,220 @@
   <h2 class="sec-title">Vea Villa Alejandría en acción</h2>
   <p class="sec-desc">Momentos reales captados en las cabañas.</p>
   <div class="video-grid">
-    <div class="video-item"><video autoplay muted loop playsinline preload="auto"><source src="v1a.mp4" type="video/mp4"></video></div>
-    <div class="video-item"><video autoplay muted loop playsinline preload="auto"><source src="v1b.mp4" type="video/mp4"></video></div>
-    <div class="video-item"><video autoplay muted loop playsinline preload="auto"><source src="v1c.mp4" type="video/mp4"></video></div>
-    <div class="video-item"><video autoplay muted loop playsinline preload="auto"><source src="v2a.mp4" type="video/mp4"></video></div>
-    <div class="video-item"><video autoplay muted loop playsinline preload="auto"><source src="v2b.mp4" type="video/mp4"></video></div>
-    <div class="video-item"><video autoplay muted loop playsinline preload="auto"><source src="v2c.mp4" type="video/mp4"></video></div>
-    <div class="video-item"><video autoplay muted loop playsinline preload="auto"><source src="v3a.mp4" type="video/mp4"></video></div>
-    <div class="video-item"><video autoplay muted loop playsinline preload="auto"><source src="v3b.mp4" type="video/mp4"></video></div>
-    <div class="video-item"><video autoplay muted loop playsinline preload="auto"><source src="v3c.mp4" type="video/mp4"></video></div>
-    <div class="video-item"><video autoplay muted loop playsinline preload="auto"><source src="v3d.mp4" type="video/mp4"></video></div>
-    <div class="video-item"><video autoplay muted loop playsinline preload="auto"><source src="v3e.mp4" type="video/mp4"></video></div>
-    <div class="video-item"><video autoplay muted loop playsinline preload="auto"><source src="v4a.mp4" type="video/mp4"></video></div>
-    <div class="video-item"><video autoplay muted loop playsinline preload="auto"><source src="v4b.mp4" type="video/mp4"></video></div>
-    <div class="video-item"><video autoplay muted loop playsinline preload="auto"><source src="v4c.mp4" type="video/mp4"></video></div>
-    <div class="video-item"><video autoplay muted loop playsinline preload="auto"><source src="v4d.mp4" type="video/mp4"></video></div>
-    <div class="video-item"><video autoplay muted loop playsinline preload="auto"><source src="v5a.mp4" type="video/mp4"></video></div>
-    <div class="video-item"><video autoplay muted loop playsinline preload="auto"><source src="v5b.mp4" type="video/mp4"></video></div>
+    <div class="video-item"><video muted loop playsinline preload="none" data-lazy><source src="v1c.mp4" type="video/mp4"></video></div>
+    <div class="video-item"><video muted loop playsinline preload="none" data-lazy><source src="v2b.mp4" type="video/mp4"></video></div>
+    <div class="video-item"><video muted loop playsinline preload="none" data-lazy><source src="v3b.mp4" type="video/mp4"></video></div>
+    <div class="video-item"><video muted loop playsinline preload="none" data-lazy><source src="v4b.mp4" type="video/mp4"></video></div>
+    <div class="video-item"><video muted loop playsinline preload="none" data-lazy><source src="v5b.mp4" type="video/mp4"></video></div>
+    <div class="video-item"><video muted loop playsinline preload="none" data-lazy><source src="v5c.mp4" type="video/mp4"></video></div>
   </div>
+  <script>
+    (function(){
+      var vids = document.querySelectorAll('video[data-lazy]');
+      if(!vids.length) return;
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){ e.target.play(); io.unobserve(e.target); }
+        });
+      },{threshold:0.1});
+      vids.forEach(function(v){ io.observe(v); });
+    })();
+  </script>
 </section>
 
 <!-- EVENTOS -->
-<section class=
+<section class="eventos-bg" id="eventos">
+  <p class="sec-label">🎉 Celebre con nosotros</p>
+  <h2 class="sec-title">El lugar ideal para cada ocasión especial</h2>
+  <p class="sec-desc">Villa Alejandría tiene todo lo que necesita para hacer de su evento un momento inolvidable.</p>
+  <div class="eventos-grid">
+    <div class="evento-card"><span class="evento-icon">💍</span><h3>Bodas y Matrimonios</h3><p>Ceremonia al aire libre con piscina y jardín como fondo. El escenario perfecto para comenzar su vida juntos rodeados de naturaleza y calor.</p></div>
+    <div class="evento-card"><span class="evento-icon">🌹</span><h3>Quinceañeros</h3><p>Celebre los 15 años más especiales con piscina iluminada, jardín decorado y espacio para toda la familia. Una fiesta que ella jamás olvidará.</p></div>
+    <div class="evento-card"><span class="evento-icon">🎂</span><h3>Cumpleaños</h3><p>De 10 a 30 personas. Piscina, jacuzzi, asadero y canchas para que la celebración sea diferente, especial y muy divertida.</p></div>
+    <div class="evento-card"><span class="evento-icon">👨‍👩‍👧‍👦</span><h3>Reuniones Familiares</h3><p>El punto de encuentro ideal para toda la familia. Abuelos, niños y jóvenes disfrutando en un mismo lugar con actividades para cada uno.</p></div>
+    <div class="evento-card"><span class="evento-icon">🎓</span><h3>Reunión de Promoción</h3><p>¿Cuántos años pasaron? Reencuéntrese con sus compañeros de colegio o universidad y revivan los mejores tiempos en tierra caliente.</p></div>
+    <div class="evento-card"><span class="evento-icon">🏢</span><h3>Retiro Empresarial</h3><p>Team building, reuniones de integración o simplemente premiar a su equipo. Desconecte y reconecte con la naturaleza.</p></div>
+    <div class="evento-card"><span class="evento-icon">💃</span><h3>Despedidas de Soltera/o</h3><p>Piscina, jacuzzi, BBQ y buena música. La despedida perfecta en tierra caliente con todo el grupo.</p></div>
+    <div class="evento-card"><span class="evento-icon">🌅</span><h3>Escapadas de Fin de Semana</h3><p>No necesita un motivo especial. Venga a descansar, jugar tejo, disfrutar la piscina y cargar pilas lejos del ruido de la ciudad.</p></div>
+  </div>
+  <div class="eventos-testimonial">
+    <p>"Celebramos nuestra boda en Villa Alejandría y fue <strong>exactamente lo que soñábamos</strong>. Jardín precioso, piscina iluminada, espacio para todos nuestros invitados. <strong>100% recomendado.</strong>"</p>
+    <p style="margin-top:12px; font-size:14px; opacity:0.7;">— Una pareja feliz que dijo "Sí" en Villa Alejandría 💍</p>
+  </div>
+  <div style="text-align:center; margin-top:36px;">
+    <a href="https://wa.me/573043045809?text=Hola,%20quiero%20cotizar%20un%20evento%20en%20Villa%20Alejandría" target="_blank"
+       style="display:inline-flex;align-items:center;gap:12px;background:#25D366;color:#fff;padding:16px 36px;border-radius:12px;font-size:16px;font-weight:800;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.4);">
+      <svg style="width:22px;height:22px;fill:#fff" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Cotizar mi evento por WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- AMENIDADES -->
+<section id="amenidades">
+  <p class="sec-label text-center">🏡 Las instalaciones</p>
+  <h2 class="sec-title text-center">Todo para disfrutar sin salir</h2>
+  <p class="sec-desc text-center" style="margin:0 auto 36px;">Cada rincón pensado para que su grupo descanse, se divierta y viva momentos inolvidables.</p>
+  <div class="amen-grid">
+    <div class="amen-card"><span class="amen-icon">🏊</span><h3>Piscina</h3><p>Piscina amplia con iluminación multicolor para el día y la noche.</p></div>
+    <div class="amen-card"><span class="amen-icon">🛁</span><h3>Jacuzzi</h3><p>Iluminado y acogedor. Relájese después de un día de actividades.</p></div>
+    <div class="amen-card"><span class="amen-icon">📽️</span><h3>Pantalla Proyector</h3><p>Cine al aire libre, karaoke o transmisiones especiales en la piscina.</p></div>
+    <div class="amen-card"><span class="amen-icon">🔥</span><h3>BBQ / Asadero</h3><p>Zona de asados equipada para celebraciones con el sabor de la brasa.</p></div>
+    <div class="amen-card"><span class="amen-icon">🎯</span><h3>Cancha de Tejo</h3><p>El deporte más colombiano. Torneos y diversión garantizada.</p></div>
+    <div class="amen-card"><span class="amen-icon">⚽</span><h3>Cancha de Fútbol</h3><p>Organice su partido rodeado de naturaleza y verde.</p></div>
+    <div class="amen-card"><span class="amen-icon">🎳</span><h3>Bolibrana</h3><p>Diversión colombiana para todas las edades.</p></div>
+    <div class="amen-card"><span class="amen-icon">🎲</span><h3>Juegos de Mesa</h3><p>Parqués, dominó, cartas y más para las noches en familia.</p></div>
+    <div class="amen-card"><span class="amen-icon">🚗</span><h3>Parqueaderos</h3><p>Estacionamiento privado y seguro para todos los vehículos.</p></div>
+  </div>
+</section>
+
+<!-- CABAÑAS -->
+<section style="background:#fff8f0; padding:64px 5%;" id="cabanas">
+  <p class="sec-label">🏡 Alojamiento</p>
+  <h2 class="sec-title">2 cabañas · Hasta 30 personas</h2>
+  <p class="sec-desc">Cada cabaña con 4 habitaciones privadas, baños y áreas comunes.</p>
+  <div class="cabanas-grid">
+    <div class="cabana-card">
+      <h3>🌿 Cabaña 1</h3><span class="cabana-cap">Hasta 15 personas</span>
+      <ul class="cabana-features">
+        <li>🛏️ 4 habitaciones privadas</li><li>🚿 Baños completos</li>
+        <li>🍽️ Cocina y comedor</li><li>📺 Sala de estar</li>
+        <li>🏊 Acceso a piscina y jacuzzi</li><li>✅ Todas las amenidades incluidas</li>
+      </ul>
+    </div>
+    <div class="cabana-card">
+      <h3>🌺 Cabaña 2</h3><span class="cabana-cap">Hasta 15 personas</span>
+      <ul class="cabana-features">
+        <li>🛏️ 4 habitaciones privadas</li><li>🚿 Baños completos</li>
+        <li>🍽️ Cocina y comedor</li><li>📺 Sala de estar</li>
+        <li>🏊 Acceso a piscina y jacuzzi</li><li>✅ Todas las amenidades incluidas</li>
+      </ul>
+    </div>
+  </div>
+  <div class="juntas-box">
+    <h3>💡 Reserve las 2 cabañas juntas para su evento</h3>
+    <p>Grupos de 16 a 30 personas. Ideal para bodas, quinces, reuniones familiares y eventos especiales.<br>Uso exclusivo de toda la propiedad — jardines, piscina, jacuzzi, canchas y salones.</p>
+  </div>
+</section>
+
+<!-- TURISMO -->
+<section class="turismo-bg" id="turismo">
+  <p class="sec-label text-center">🗺️ Alrededores</p>
+  <h2 class="sec-title text-center">Mariquita y alrededores — un destino completo</h2>
+  <p class="sec-desc text-center" style="margin:0 auto 36px;">A pocos minutos de las cabañas: naturaleza, historia, fe y diversión.</p>
+  <div class="turismo-grid">
+    <div class="tur-card"><div class="tur-img"><img src="ermita1.JPG" alt="La Ermita Mariquita" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div><div class="tur-body"><span class="tur-dist">📍 Mariquita · 5 min</span><h3>La Ermita — El Señor Milagroso</h3><p>La famosa iglesia colonial de <strong>La Ermita</strong>, hogar del <strong>Milagroso Señor de La Ermita</strong>. Un lugar de fe y devoción que convoca a miles de peregrinos de todo el país.</p></div></div>
+    <div class="tur-card"><div class="tur-img"><img src="frutomangostino.webp" alt="Fruto Mangostino Mariquita" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div><div class="tur-body"><span class="tur-dist">📍 Mariquita · Ciudad del Mangostino</span><h3>🍇 El Mangostino de Mariquita</h3><p>Pruebe el <strong>mangostino más dulce de Colombia</strong>. La fruta exótica que hace famosa a Mariquita en todo el país. Una experiencia gastronómica única e irrepetible.</p></div></div>
+    <div class="tur-card"><div class="tur-img"><img src="vinomangostino.jpeg" alt="Cerveza artesanal de Mangostino Manbú" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div><div class="tur-body"><span class="tur-dist">📍 Mariquita · Producto local</span><h3>Cerveza Artesanal de Mangostino</h3><p>La famosa <strong>cerveza artesanal Manbú sabor a mangostino</strong>. Elaborada con el fruto de la región. Una bebida única que no encontrará en ningún otro lugar del mundo.</p></div></div>
+    <div class="tur-card"><div class="tur-img"><img src="cataratas.jpg" alt="Cataratas de Medina" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div><div class="tur-body"><span class="tur-dist">📍 Alrededores Mariquita · 10 min</span><h3>💦 Balnearios y Cataratas de Medina</h3><p>Hermosas cataratas y balnearios naturales de aguas cristalinas rodeadas de vegetación tropical. Ecoturismo y aventura al aire libre.</p></div></div>
+    <div class="tur-card"><div class="tur-img"><img src="cancun.jpeg" alt="Balneario Cancún Tolimense" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div><div class="tur-body"><span class="tur-dist">📍 Norte del Tolima · 15 min</span><h3>🏖️ Sitios tipo "Cancún Tolimense"</h3><p>Balnearios con aguas cristalinas, carpas y ambiente festivo. El Caribe colombiano en tierra caliente a precio colombiano.</p></div></div>
+    <div class="tur-card"><div class="tur-img"><img src="armero2.jpeg" alt="Armero 1985" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div><div class="tur-body"><span class="tur-dist">📍 Armero · 15 min</span><h3>🌋 Armero — Sitio de Memoria 1985</h3><p>El histórico <strong>Armero</strong> recuerda la tragedia del <strong>Nevado del Ruiz del 13 de noviembre de 1985</strong>. Un recorrido que conmueve profundamente a todo colombiano.</p></div></div>
+    <div class="tur-card"><div class="tur-img"><img src="puentehonda.jpeg" alt="Puente Navarro Honda" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div><div class="tur-body"><span class="tur-dist">📍 Honda · 20 min</span><h3>🌉 Honda — Ciudad de los Puentes</h3><p>Ciudad histórica cuna de <strong>Alfonso López Pumarejo</strong>. Recorra la <strong>Calle de las Trampas</strong>, la <strong>Catedral del Alto del Rosario</strong>, el <strong>Malecón</strong> y tours por el <strong>Río Magdalena</strong>.</p></div></div>
+    <div class="tur-card"><div class="tur-img"><img src="falan.webp" alt="Ciudad Perdida Falan" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div><div class="tur-body"><span class="tur-dist">📍 Falan, Tolima · 30 min</span><h3>🏛️ Ciudad Perdida de Falan</h3><p>Vestigios de la llamada <strong>Ciudad Perdida</strong> de Falan. Un misterioso sitio arqueológico e histórico rodeado de selva y montaña tolimense.</p></div></div>
+    <div class="tur-card" style="background:linear-gradient(135deg,#c0390a,#ff7b00,#ffd200);color:#fff;">
+      <div class="tur-img"><div class="tur-img-bg" style="background:rgba(0,0,0,0.15);">🧭</div></div>
+      <div class="tur-body"><h3 style="color:#fff;">Su guía local incluida</h3><p style="color:rgba(255,255,255,0.9);">Al reservar le orientamos sobre los mejores sitios, horarios, precios y cómo llegar. Conocemos la región.</p>
+      <a href="https://wa.me/573043045809?text=Hola,%20quiero%20información%20sobre%20los%20sitios%20turísticos%20cerca%20a%20Villa%20Alejandría" target="_blank" style="display:inline-block;margin-top:14px;background:#fff;color:#c0390a;padding:10px 20px;border-radius:8px;font-weight:700;font-size:13px;">📲 Pedir información</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ARMERO -->
+<section class="armero-bg" id="armero">
+  <div class="armero-inner">
+    <div class="armero-text">
+      <p class="sec-label">🌋 Historia cerca a nosotros</p>
+      <h2 class="sec-title" style="font-size:clamp(1.6rem,3vw,2.2rem);">A minutos de Armero</h2>
+      <p>Villa Alejandría está ubicada cerca a <strong>Armero, Tolima</strong> — uno de los lugares más históricos y emotivos de Colombia.</p>
+      <p>El <strong>13 de noviembre de 1985</strong>, la erupción del <strong>Volcán Nevado del Ruiz</strong> sepultó la ciudad bajo un lahar, en una de las tragedias naturales más recordadas del país.</p>
+      <p>Hoy, Armero es un <strong>sitio de memoria y reflexión</strong>. Miles de colombianos llegan cada año a rendir homenaje a sus víctimas.</p>
+      <p><em>Descanse en Villa Alejandría y visite Armero a pocos minutos.</em></p>
+    </div>
+    <div class="armero-img-box">
+      <img src="armero1.png" alt="Monumento Sitio de Memoria Armero" style="width:100%;height:100%;object-fit:cover;">
+    </div>
+  </div>
+</section>
+
+<!-- PRECIOS -->
+<section id="precios">
+  <p class="sec-label text-center">💰 Tarifas</p>
+  <h2 class="sec-title text-center">Precios claros, sin sorpresas</h2>
+  <p class="sec-desc text-center" style="margin:0 auto 36px;">Pague por persona. Todas las amenidades incluidas. Sin costos ocultos.</p>
+  <div class="precios-grid">
+    <div class="precio-card">
+      <p class="precio-plan">Por persona</p>
+      <p class="precio-monto">$80.000</p>
+      <p class="precio-unit">por noche</p>
+      <ul class="precio-includes">
+        <li>✅ Piscina incluida</li><li>✅ Jacuzzi incluido</li>
+        <li>✅ Todas las canchas</li><li>✅ Parqueadero</li>
+      </ul>
+    </div>
+    <div class="precio-card featured">
+      <p class="precio-plan">Grupo de 20 personas</p>
+      <p class="precio-monto">$1.600.000</p>
+      <p class="precio-unit">por noche · 1 cabaña completa</p>
+      <ul class="precio-includes">
+        <li>✅ 4 habitaciones privadas</li><li>✅ Piscina + jacuzzi</li>
+        <li>✅ BBQ + canchas</li><li>✅ Todo incluido</li>
+      </ul>
+    </div>
+    <div class="precio-card">
+      <p class="precio-plan">Finca completa</p>
+      <p class="precio-monto">$2.400.000</p>
+      <p class="precio-unit">por noche · 30 personas · 2 cabañas</p>
+      <ul class="precio-includes">
+        <li>✅ 2 cabañas completas</li><li>✅ Uso exclusivo</li>
+        <li>✅ Ideal para eventos</li><li>✅ Todo incluido</li>
+      </ul>
+    </div>
+  </div>
+  <p class="precio-note">* Tarifas sujetas a disponibilidad. Consulte por WhatsApp fechas especiales, temporadas altas y tarifas para eventos.</p>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <h2>¿Listo para vivir una experiencia inolvidable? 🌴</h2>
+  <p>Consulte disponibilidad y reserve su fecha ahora. Le respondemos de inmediato.</p>
+  <a class="cta-wa-big" href="https://wa.me/573043045809?text=Hola,%20quiero%20reservar%20las%20cabañas%20Villa%20Alejandría%20en%20Mariquita" target="_blank">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    +57 304 304 5809
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><strong>Villa Alejandría</strong> — Cr 18D N° 6-62, San Sebastián de Mariquita, Tolima · Colombia</p>
+  <p style="margin:6px 0;">WhatsApp: <a href="https://wa.me/573043045809">304 304 5809</a></p>
+  <p style="margin-top:12px; opacity:0.6;">© 2026 · <strong>ASESORÍAS Y CONSULTORÍAS EMPRESARIALES ACUÑA S.A.S.</strong></p>
+</footer>
+
+<script>
+const galleryImages = [
+  {src:"villaalejandria1.jpeg"},{src:"14.jpeg"},{src:"15.jpeg"},{src:"16.jpeg"},
+  {src:"9.jpeg"},{src:"3.jpeg"},{src:"6.jpeg"},{src:"5.jpeg"},
+  {src:"2.jpeg"},{src:"4.jpeg"},{src:"12.jpeg"},{src:"13.jpeg"},
+  {src:"8.jpeg"},{src:"10.jpeg"},{src:"7.jpeg"},{src:"1.jpeg"},
+  {src:"11.jpeg"}
+];
+let lbIdx = 0;
+function openLightbox(idx) {
+  lbIdx = idx;
+  document.getElementById('lb-img').src = galleryImages[idx].src;
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLightbox() { document.getElementById('lightbox').classList.remove('open'); }
+function lbNav(dir) {
+  lbIdx = (lbIdx + dir + galleryImages.length) % galleryImages.length;
+  document.getElementById('lb-img').src = galleryImages[lbIdx].src;
+}
+document.getElementById('lightbox').addEventListener('click', function(e){ if(e.target===this) closeLightbox(); });
+document.addEventListener('keydown', function(e){
+  if(e.key==='Escape') closeLightbox();
+  if(e.key==='ArrowLeft') lbNav(-1);
+  if(e.key==='ArrowRight') lbNav(1);
+});
+</script>
+</body>
+</html>
