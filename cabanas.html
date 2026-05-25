@@ -3,26 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Villa Alejandría — Cabañas en Mariquita, Tolima</title>
-  <meta name="description" content="Cabañas Villa Alejandría en Mariquita, Tolima. Piscina, jacuzzi, BBQ, tejo, fútbol. Hasta 30 personas. Reservas por WhatsApp.">
+  <title>Villa Alejandría — Cabañas para Eventos en Mariquita, Tolima</title>
+  <meta name="description" content="Villa Alejandría: cabañas para bodas, quinces, cumpleaños y reuniones en Mariquita, Tolima. Piscina, jacuzzi, BBQ, tejo y fútbol. Hasta 30 personas. Reservas por WhatsApp.">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Poppins', Arial, sans-serif; background: #fffdf7; color: #1a1a1a; font-size: 16px; }
     a { text-decoration: none; color: inherit; }
 
-    /* NAV */
+    /* ── NAV ── */
     nav {
-      background: linear-gradient(90deg, #1a5c38, #2e8b57);
+      background: linear-gradient(90deg, #e8420a, #ff7b00, #f5a800);
       padding: 14px 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: sticky; top: 0; z-index: 100;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+      box-shadow: 0 2px 14px rgba(232,66,10,0.4);
     }
-    .logo { font-size: 22px; font-weight: 800; color: #fff; letter-spacing: 1px; }
-    .logo span { color: #f9e04b; }
+    .logo { font-size: 22px; font-weight: 800; color: #fff; letter-spacing: 1px; text-shadow: 0 1px 4px rgba(0,0,0,0.2); }
+    .logo span { color: #fff; text-shadow: 0 0 12px rgba(255,255,255,0.7); }
     .nav-wa {
       background: #25D366;
       color: #fff;
@@ -33,13 +33,13 @@
       display: inline-flex;
       align-items: center;
       gap: 7px;
-      box-shadow: 0 3px 10px rgba(37,211,102,0.4);
+      box-shadow: 0 3px 10px rgba(37,211,102,0.5);
     }
     .wa-svg { width: 18px; height: 18px; fill: #fff; flex-shrink: 0; }
 
-    /* HERO */
+    /* ── HERO ── */
     .hero {
-      background: linear-gradient(160deg, #0d3320 0%, #1a5c38 45%, #2e8b57 100%);
+      background: linear-gradient(160deg, #c0390a 0%, #e8620d 30%, #ff9a00 65%, #ffd200 100%);
       color: #fff;
       text-align: center;
       padding: 72px 5% 64px;
@@ -49,438 +49,724 @@
     .hero::before {
       content: '';
       position: absolute; inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-      pointer-events: none;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
-    .hero-badge {
+    .hero-tag {
       display: inline-block;
-      background: rgba(255,255,255,0.15);
-      border: 1.5px solid rgba(255,255,255,0.3);
-      border-radius: 30px;
-      padding: 6px 18px;
+      background: rgba(255,255,255,0.25);
+      border: 1px solid rgba(255,255,255,0.5);
+      color: #fff;
       font-size: 13px;
-      font-weight: 600;
-      color: #d4f5e2;
-      margin-bottom: 16px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 30px;
+      margin-bottom: 18px;
     }
     .hero h1 {
-      font-size: clamp(30px, 6vw, 52px);
+      font-size: clamp(2rem, 5vw, 3.4rem);
       font-weight: 800;
       line-height: 1.15;
-      margin-bottom: 18px;
-      text-shadow: 0 2px 14px rgba(0,0,0,0.25);
+      margin-bottom: 16px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
-    .hero h1 span { color: #f9e04b; }
-    .hero p {
-      font-size: 18px;
-      color: #b8e8cc;
-      max-width: 600px;
-      margin: 0 auto 36px;
-      line-height: 1.7;
+    .hero h1 span { color: #fff; text-shadow: 0 2px 12px rgba(0,0,0,0.3); }
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      opacity: 0.95;
+      max-width: 640px;
+      margin: 0 auto 12px;
     }
-    .hero-price {
+    .hero-events {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin: 18px auto;
+      max-width: 680px;
+    }
+    .hero-events span {
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.4);
+      color: #fff;
+      font-size: 13px;
+      padding: 5px 14px;
+      border-radius: 20px;
+    }
+    .precio-badge {
       display: inline-block;
-      background: rgba(249,224,75,0.18);
-      border: 2px solid #f9e04b;
-      border-radius: 12px;
-      padding: 10px 28px;
-      font-size: 22px;
+      background: #fff;
+      color: #c0390a;
+      font-size: 18px;
       font-weight: 800;
-      color: #f9e04b;
-      margin-bottom: 32px;
+      padding: 10px 28px;
+      border-radius: 10px;
+      margin: 16px 0;
     }
-    .hero-price small { font-size: 14px; font-weight: 500; color: #d4f5e2; display: block; margin-top: 2px; }
-    .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-    .btn-wa {
+    .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 8px; }
+    .btn-primary {
       background: #25D366;
       color: #fff;
-      padding: 15px 32px;
+      padding: 14px 30px;
       border-radius: 10px;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 700;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      box-shadow: 0 5px 18px rgba(37,211,102,0.45);
+      box-shadow: 0 4px 16px rgba(37,211,102,0.5);
     }
     .btn-outline {
-      background: transparent;
-      color: #d4f5e2;
-      padding: 15px 32px;
+      border: 2px solid rgba(255,255,255,0.7);
+      color: #fff;
+      padding: 14px 30px;
       border-radius: 10px;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 600;
-      border: 2px solid rgba(255,255,255,0.4);
     }
 
-    /* AMENIDADES */
-    .amenidades { background: #fff; padding: 64px 5%; }
-    .section-label {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 2.5px;
+    /* ── SECCIÓN GENÉRICA ── */
+    section { padding: 64px 5%; }
+    .sec-label {
+      font-size: 11px;
       font-weight: 700;
-      color: #1a5c38;
-      margin-bottom: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #e8620d;
+      margin-bottom: 8px;
     }
-    h2 { font-size: 32px; font-weight: 800; color: #0d3320; margin-bottom: 12px; line-height: 1.2; }
-    .subtitle { font-size: 17px; color: #555; line-height: 1.7; max-width: 560px; margin-bottom: 44px; }
+    .sec-title {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      color: #7a1f00;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+    .sec-desc {
+      color: #555;
+      max-width: 600px;
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+    .text-center { text-align: center; }
+    .text-center .sec-desc { margin-left: auto; margin-right: auto; }
+
+    /* ── GALERÍA FOTOS ── */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 12px;
+      aspect-ratio: 4/3;
+      cursor: pointer;
+      position: relative;
+    }
+    .gallery-item.tall { aspect-ratio: 3/4; }
+    .gallery-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+      display: block;
+    }
+    .gallery-item:hover img { transform: scale(1.06); }
+    .gallery-caption {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(0deg, rgba(0,0,0,0.65) 0%, transparent 100%);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 20px 12px 10px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .gallery-item:hover .gallery-caption { opacity: 1; }
+
+    /* Lightbox */
+    #lightbox {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    #lightbox.open { display: flex; }
+    #lightbox img {
+      max-width: 90vw;
+      max-height: 88vh;
+      border-radius: 10px;
+      object-fit: contain;
+    }
+    #lb-close {
+      position: absolute; top: 18px; right: 24px;
+      color: #fff; font-size: 36px;
+      cursor: pointer; line-height: 1;
+      background: none; border: none;
+    }
+    #lb-prev, #lb-next {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      color: #fff; font-size: 32px; cursor: pointer;
+      background: rgba(255,255,255,0.12);
+      border: none; border-radius: 50%;
+      width: 50px; height: 50px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #lb-prev { left: 14px; }
+    #lb-next { right: 14px; }
+
+    /* ── VIDEOS ── */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 14px;
+      margin-top: 12px;
+    }
+    .video-item {
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      background: #000;
+      aspect-ratio: 9/16;
+    }
+    .video-item video {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+
+    /* ── EVENTOS ── */
+    .eventos-bg {
+      background: linear-gradient(135deg, #8b0030 0%, #c0390a 35%, #e8620d 65%, #ff9a00 100%);
+      color: #fff;
+    }
+    .eventos-bg .sec-label { color: rgba(255,255,255,0.85); }
+    .eventos-bg .sec-title { color: #fff; }
+    .eventos-bg .sec-desc { color: rgba(255,255,255,0.9); }
+    .eventos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 8px;
+    }
+    .evento-card {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 16px;
+      padding: 28px 20px;
+      text-align: center;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .evento-card:hover {
+      background: rgba(255,255,255,0.22);
+      transform: translateY(-4px);
+    }
+    .evento-icon { font-size: 42px; margin-bottom: 12px; display: block; }
+    .evento-card h3 { font-size: 16px; font-weight: 700; color: #ffe066; margin-bottom: 8px; }
+    .evento-card p { font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.6; }
+
+    .eventos-testimonial {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-top: 40px;
+      text-align: center;
+    }
+    .eventos-testimonial p { font-size: 17px; color: #fff; font-style: italic; line-height: 1.7; }
+    .eventos-testimonial strong { color: #ffe066; font-style: normal; }
+
+    /* ── AMENIDADES ── */
     .amen-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: 18px;
     }
     .amen-card {
-      background: #f4faf6;
-      border-radius: 14px;
-      padding: 26px 20px;
-      border-top: 4px solid #2e8b57;
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px 20px;
       text-align: center;
-      transition: transform .15s;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+      border: 1px solid #fde8d8;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
-    .amen-card:hover { transform: translateY(-4px); box-shadow: 0 8px 22px rgba(0,0,0,0.09); }
-    .amen-card.c2 { border-top-color: #1a7abf; }
-    .amen-card.c3 { border-top-color: #c97a0a; }
-    .amen-card.c4 { border-top-color: #8b3fa0; }
-    .amen-card.c5 { border-top-color: #c0392b; }
-    .amen-card.c6 { border-top-color: #0d8a8a; }
-    .amen-icon { font-size: 40px; display: block; margin-bottom: 12px; }
-    .amen-card h3 { font-size: 16px; font-weight: 700; color: #0d3320; margin-bottom: 6px; }
-    .amen-card p  { font-size: 14px; color: #555; line-height: 1.5; }
+    .amen-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(232,98,13,0.18); }
+    .amen-icon { font-size: 38px; margin-bottom: 12px; display: block; }
+    .amen-card h3 { font-size: 16px; font-weight: 700; color: #7a1f00; margin-bottom: 6px; }
+    .amen-card p { font-size: 13px; color: #666; line-height: 1.6; }
 
-    /* CABAÑAS */
-    .cabanas { background: linear-gradient(160deg, #f0faf4 0%, #e8f5ec 100%); padding: 64px 5%; }
-    .cabanas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 820px; }
+    /* ── CABAÑAS ── */
+    .cabanas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+      margin-bottom: 32px;
+    }
     .cabana-card {
       background: #fff;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      border-radius: 20px;
+      padding: 36px 28px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      border-top: 5px solid #e8620d;
     }
-    .cabana-header {
-      padding: 30px 24px 22px;
-      background: linear-gradient(135deg, #1a5c38, #2e8b57);
+    .cabana-card h3 { font-size: 22px; font-weight: 800; color: #7a1f00; margin-bottom: 6px; }
+    .cabana-cap {
+      display: inline-block;
+      background: #fff3e0;
+      color: #c0390a;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 18px;
+    }
+    .cabana-features { list-style: none; }
+    .cabana-features li {
+      padding: 7px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 14px;
+      color: #444;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .cabana-features li:last-child { border-bottom: none; }
+    .juntas-box {
+      background: linear-gradient(135deg, #c0390a, #ff7b00, #ffd200);
       color: #fff;
-    }
-    .cabana-header h3 { font-size: 22px; font-weight: 800; margin-bottom: 6px; }
-    .cabana-header p  { font-size: 15px; color: #b8e8cc; }
-    .cabana-body { padding: 22px 24px; }
-    .cabana-feat { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; font-size: 15px; color: #333; }
-    .cabana-feat span { font-size: 20px; }
-
-    /* UBICACION */
-    .ubicacion { background: #fff; padding: 64px 5%; }
-    .mapa-placeholder {
-      background: linear-gradient(135deg, #1a5c38, #0d3320);
-      border-radius: 16px;
-      padding: 48px 32px;
+      border-radius: 20px;
+      padding: 32px;
       text-align: center;
-      color: #fff;
-      max-width: 700px;
     }
-    .mapa-placeholder h3 { font-size: 24px; font-weight: 800; margin-bottom: 10px; }
-    .mapa-placeholder p  { font-size: 16px; color: #b8e8cc; margin-bottom: 24px; line-height: 1.7; }
+    .juntas-box h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+    .juntas-box p { opacity: 0.93; font-size: 14px; line-height: 1.6; }
 
-    /* PRECIOS */
-    .precios { background: linear-gradient(160deg, #fffdf0 0%, #fff9e0 100%); padding: 64px 5%; }
-    .precios .section-label { color: #c97a0a; }
-    .precio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; max-width: 700px; }
+    /* ── TURISMO ── */
+    .turismo-bg { background: #fff8f0; }
+    .turismo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 22px;
+    }
+    .tur-card {
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 3px 18px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
+    }
+    .tur-card:hover { transform: translateY(-5px); }
+    .tur-img {
+      height: 200px;
+      overflow: hidden;
+    }
+    .tur-img-bg {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 70px;
+    }
+    .tur-body { padding: 20px; }
+    .tur-body h3 { font-size: 17px; font-weight: 700; color: #7a1f00; margin-bottom: 8px; }
+    .tur-body p { font-size: 13px; color: #666; line-height: 1.65; }
+    .tur-dist {
+      display: inline-block;
+      background: #fff3e0;
+      color: #c0390a;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 12px;
+      margin-bottom: 8px;
+    }
+
+    /* ── ARMERO ── */
+    .armero-bg {
+      background: linear-gradient(135deg, #1a1a2e 0%, #2d1b4e 50%, #3d2060 100%);
+      color: #fff;
+    }
+    .armero-bg .sec-label { color: #c9a0ff; }
+    .armero-bg .sec-title { color: #fff; }
+    .armero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    @media (max-width: 680px) { .armero-inner { grid-template-columns: 1fr; gap: 28px; } }
+    .armero-text p { line-height: 1.75; opacity: 0.88; font-size: 15px; margin-bottom: 14px; }
+    .armero-img-box {
+      border-radius: 18px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+    .armero-img-placeholder {
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, #3d2060, #6a3090);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; padding: 24px;
+    }
+    .armero-img-placeholder .big-emoji { font-size: 64px; margin-bottom: 12px; }
+    .armero-img-placeholder p { color: rgba(255,255,255,0.8); font-size: 14px; line-height: 1.6; }
+
+    /* ── PRECIOS ── */
+    .precios-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
     .precio-card {
       background: #fff;
-      border: 2px solid #f0dea0;
-      border-radius: 14px;
-      padding: 28px 22px;
+      border-radius: 20px;
+      padding: 36px 24px;
       text-align: center;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      border: 2px solid transparent;
     }
-    .precio-card.featured {
-      border-color: #2e8b57;
-      background: linear-gradient(160deg, #f0faf4, #e0f5e8);
+    .precio-card.featured { border-color: #e8620d; position: relative; }
+    .precio-card.featured::before {
+      content: "⭐ Más popular";
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      background: #e8620d; color: #fff;
+      font-size: 11px; font-weight: 700;
+      padding: 4px 14px; border-radius: 20px; white-space: nowrap;
     }
-    .precio-card .precio-titulo { font-size: 14px; color: #888; font-weight: 600; margin-bottom: 10px; }
-    .precio-card .precio-valor { font-size: 30px; font-weight: 800; color: #0d3320; }
-    .precio-card .precio-valor small { font-size: 14px; font-weight: 500; color: #888; }
-    .precio-card .precio-desc { font-size: 13px; color: #666; margin-top: 10px; line-height: 1.5; }
+    .precio-plan { font-size: 14px; font-weight: 700; color: #666; margin-bottom: 6px; }
+    .precio-monto { font-size: 32px; font-weight: 800; color: #c0390a; line-height: 1; }
+    .precio-unit { font-size: 13px; color: #888; margin: 4px 0 16px; }
+    .precio-includes { list-style: none; text-align: left; }
+    .precio-includes li {
+      font-size: 13px; color: #555;
+      padding: 5px 0; border-bottom: 1px solid #f0f0f0;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .precio-includes li:last-child { border-bottom: none; }
+    .precio-note { font-size: 12px; color: #888; margin-top: 24px; text-align: center; max-width: 700px; margin-left: auto; margin-right: auto; }
 
-    /* CTA */
-    .cta {
-      background: linear-gradient(135deg, #0d3320 0%, #1a5c38 50%, #2e8b57 100%);
+    /* ── CTA FINAL ── */
+    .cta-final {
+      background: linear-gradient(135deg, #c0390a, #e8620d, #ff9a00);
       color: #fff;
       text-align: center;
       padding: 72px 5%;
     }
-    .cta h2 { color: #f9e04b; font-size: 34px; margin-bottom: 14px; }
-    .cta p  { color: #b8e8cc; font-size: 18px; margin-bottom: 34px; }
-    .cta-wa {
+    .cta-final h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; margin-bottom: 12px; }
+    .cta-final p { opacity: 0.93; font-size: 15px; margin-bottom: 28px; }
+    .cta-wa-big {
       display: inline-flex;
       align-items: center;
       gap: 12px;
       background: #25D366;
       color: #fff;
-      padding: 18px 42px;
-      border-radius: 12px;
-      font-size: 20px;
+      padding: 18px 40px;
+      border-radius: 14px;
+      font-size: 18px;
       font-weight: 800;
-      box-shadow: 0 6px 24px rgba(37,211,102,0.45);
+      box-shadow: 0 6px 24px rgba(37,211,102,0.5);
     }
+    .cta-wa-big svg { width: 26px; height: 26px; fill: #fff; }
 
-    /* FOOTER */
+    /* ── FOOTER ── */
     footer {
-      background: #0a2218;
-      color: #7ab898;
+      background: #7a1f00;
+      color: rgba(255,255,255,0.75);
       text-align: center;
-      padding: 28px 5%;
-      font-size: 14px;
-      line-height: 1.9;
+      padding: 32px 5%;
+      font-size: 13px;
+    }
+    footer strong { color: #ffd200; }
+    footer a { color: #ffb347; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .hero-btns { flex-direction: column; align-items: center; }
+      .btn-primary, .btn-outline { width: 100%; max-width: 320px; justify-content: center; }
     }
   </style>
 </head>
 <body>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <button id="lb-close" onclick="closeLightbox()">×</button>
+  <button id="lb-prev" onclick="lbNav(-1)">‹</button>
+  <img id="lb-img" src="" alt="">
+  <button id="lb-next" onclick="lbNav(1)">›</button>
+</div>
 
 <!-- NAV -->
 <nav>
   <div class="logo">Villa <span>Alejandría</span></div>
   <a class="nav-wa" href="https://wa.me/573043045809?text=Hola,%20quiero%20información%20sobre%20las%20cabañas%20Villa%20Alejandría" target="_blank">
     <svg class="wa-svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    Reservar ahora
+    Reservar
   </a>
 </nav>
 
 <!-- HERO -->
-<div class="hero">
-  <div class="hero-badge">🌴 Mariquita, Tolima · Tierra caliente · Descanso total</div>
-  <h1>Cabañas <span>Villa Alejandría</span></h1>
-  <p>El escape perfecto a solo horas de Bogotá. Dos cabañas completas con piscina, jacuzzi, canchas y más — para grupos de hasta <strong style="color:#f9e04b;">30 personas</strong>.</p>
-  <div class="hero-price">
-    $80.000 por persona / noche
-    <small>Mínimo reserva todo el grupo · Todas las amenidades incluidas</small>
+<section class="hero">
+  <div class="hero-tag">🌴 Mariquita, Tolima · Tierra caliente</div>
+  <h1>Cabañas <span>Villa Alejandría</span><br>El escenario perfecto para<br><span>sus eventos especiales</span></h1>
+  <p class="hero-sub">Dos cabañas completas con piscina, jacuzzi, canchas y salón al aire libre.<br>Hasta <strong>30 personas</strong>. A 3 horas de Bogotá.</p>
+  <div class="hero-events">
+    <span>💍 Bodas</span>
+    <span>🌹 Quinces</span>
+    <span>🎂 Cumpleaños</span>
+    <span>👨‍👩‍👧‍👦 Reuniones familiares</span>
+    <span>🎓 Reunión de promoción</span>
+    <span>🏢 Retiro empresarial</span>
+    <span>🎉 Fiestas y celebraciones</span>
   </div>
+  <div class="precio-badge">$80.000 por persona / noche — Todo incluido</div>
   <div class="hero-btns">
-    <a class="btn-wa" href="https://wa.me/573043045809?text=Hola,%20quiero%20reservar%20las%20cabañas%20Villa%20Alejandría" target="_blank">
-      <svg style="width:18px;height:18px;fill:#fff;flex-shrink:0;" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <a class="btn-primary" href="https://wa.me/573043045809?text=Hola,%20quiero%20reservar%20las%20cabañas%20Villa%20Alejandría" target="_blank">
+      <svg style="width:20px;height:20px;fill:#fff" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       Consultar disponibilidad
     </a>
-    <a class="btn-outline" href="#precios">Ver precios</a>
+    <a class="btn-outline" href="#eventos">Ver eventos →</a>
   </div>
-</div>
+</section>
+
+<!-- GALERÍA -->
+<section id="galeria">
+  <p class="sec-label">📸 Momentos reales</p>
+  <h2 class="sec-title">Así se vive Villa Alejandría</h2>
+  <p class="sec-desc">Bodas, quinces, reuniones y noches de piscina. Todo ha pasado aquí. Estas son sus fotos reales.</p>
+  <div class="gallery-grid" id="galleryGrid">
+    <div class="gallery-item" onclick="openLightbox(0)"><img src="14.jpeg" alt="Vista aérea" loading="lazy"><div class="gallery-caption">Vista aérea · Piscina y cabañas</div></div>
+    <div class="gallery-item" onclick="openLightbox(1)"><img src="15.jpeg" alt="Piscina azul noche" loading="lazy"><div class="gallery-caption">Piscina nocturna · Luces azules</div></div>
+    <div class="gallery-item" onclick="openLightbox(2)"><img src="16.jpeg" alt="Piscina verde noche" loading="lazy"><div class="gallery-caption">Piscina nocturna · Luces verdes</div></div>
+    <div class="gallery-item tall" onclick="openLightbox(3)"><img src="9.jpeg" alt="Ceremonia matrimonio noche" loading="lazy"><div class="gallery-caption">Ceremonia de matrimonio · Noche</div></div>
+    <div class="gallery-item" onclick="openLightbox(4)"><img src="3.jpeg" alt="Boda foto grupal" loading="lazy"><div class="gallery-caption">Boda · Foto grupal</div></div>
+    <div class="gallery-item" onclick="openLightbox(5)"><img src="6.jpeg" alt="Montaje evento carpas" loading="lazy"><div class="gallery-caption">Montaje de evento · Jardín</div></div>
+    <div class="gallery-item" onclick="openLightbox(6)"><img src="5.jpeg" alt="Brindis de boda" loading="lazy"><div class="gallery-caption">Brindis nupcial</div></div>
+    <div class="gallery-item" onclick="openLightbox(7)"><img src="2.jpeg" alt="Letras iluminadas J&C" loading="lazy"><div class="gallery-caption">Decoración · Letras iluminadas</div></div>
+    <div class="gallery-item" onclick="openLightbox(8)"><img src="4.jpeg" alt="Decoración jardín" loading="lazy"><div class="gallery-caption">Decoración · Jardín de día</div></div>
+    <div class="gallery-item" onclick="openLightbox(9)"><img src="12.jpeg" alt="Jacuzzi grupal noche" loading="lazy"><div class="gallery-caption">Jacuzzi · Noche</div></div>
+    <div class="gallery-item" onclick="openLightbox(10)"><img src="13.jpeg" alt="Jacuzzi luces moradas" loading="lazy"><div class="gallery-caption">Jacuzzi · Luces moradas</div></div>
+    <div class="gallery-item" onclick="openLightbox(11)"><img src="8.jpeg" alt="Fiesta piscina proyector" loading="lazy"><div class="gallery-caption">Fiesta piscina · Con proyector</div></div>
+    <div class="gallery-item tall" onclick="openLightbox(12)"><img src="10.jpeg" alt="Ceremonia arco floral" loading="lazy"><div class="gallery-caption">Ceremonia · Arco floral</div></div>
+    <div class="gallery-item" onclick="openLightbox(13)"><img src="7.jpeg" alt="Gran foto grupal boda" loading="lazy"><div class="gallery-caption">Boda · Foto grupal al atardecer</div></div>
+    <div class="gallery-item" onclick="openLightbox(14)"><img src="1.jpeg" alt="Grupo evento nocturno" loading="lazy"><div class="gallery-caption">Celebración · Grupo de amigos</div></div>
+    <div class="gallery-item" onclick="openLightbox(15)"><img src="11.jpeg" alt="Piscina día" loading="lazy"><div class="gallery-caption">Piscina durante el día</div></div>
+    <div class="gallery-item" onclick="openLightbox(16)"><img src="17.jpeg" alt="Vista piscina cabaña" loading="lazy"><div class="gallery-caption">Piscina y cabaña principal</div></div>
+  </div>
+</section>
+
+<!-- VIDEOS -->
+<section style="background:#fff8f0; padding:64px 5%;">
+  <p class="sec-label">🎬 En vivo</p>
+  <h2 class="sec-title">Vea Villa Alejandría en acción</h2>
+  <p class="sec-desc">Momentos reales captados en las cabañas.</p>
+  <div class="video-grid">
+    <div class="video-item"><video autoplay muted loop playsinline preload="auto"><source src="v1.mp4" type="video/mp4"></video></div>
+    <div class="video-item"><video autoplay muted loop playsinline preload="auto"><source src="v2.mp4" type="video/mp4"></video></div>
+    <div class="video-item"><video autoplay muted loop playsinline preload="auto"><source src="v3.mp4" type="video/mp4"></video></div>
+    <div class="video-item"><video autoplay muted loop playsinline preload="auto"><source src="v4.mp4" type="video/mp4"></video></div>
+    <div class="video-item"><video autoplay muted loop playsinline preload="auto"><source src="v5.mp4" type="video/mp4"></video></div>
+  </div>
+</section>
+
+<!-- EVENTOS -->
+<section class="eventos-bg" id="eventos">
+  <p class="sec-label">🎉 Celebre con nosotros</p>
+  <h2 class="sec-title">El lugar ideal para cada ocasión especial</h2>
+  <p class="sec-desc">Villa Alejandría tiene todo lo que necesita para hacer de su evento un momento inolvidable.</p>
+  <div class="eventos-grid">
+    <div class="evento-card"><span class="evento-icon">💍</span><h3>Bodas y Matrimonios</h3><p>Ceremonia al aire libre con piscina y jardín como fondo. El escenario perfecto para comenzar su vida juntos rodeados de naturaleza y calor.</p></div>
+    <div class="evento-card"><span class="evento-icon">🌹</span><h3>Quinceañeros</h3><p>Celebre los 15 años más especiales con piscina iluminada, jardín decorado y espacio para toda la familia. Una fiesta que ella jamás olvidará.</p></div>
+    <div class="evento-card"><span class="evento-icon">🎂</span><h3>Cumpleaños</h3><p>De 10 a 30 personas. Piscina, jacuzzi, asadero y canchas para que la celebración sea diferente, especial y muy divertida.</p></div>
+    <div class="evento-card"><span class="evento-icon">👨‍👩‍👧‍👦</span><h3>Reuniones Familiares</h3><p>El punto de encuentro ideal para toda la familia. Abuelos, niños y jóvenes disfrutando en un mismo lugar con actividades para cada uno.</p></div>
+    <div class="evento-card"><span class="evento-icon">🎓</span><h3>Reunión de Promoción</h3><p>¿Cuántos años pasaron? Reencuéntrese con sus compañeros de colegio o universidad y revivan los mejores tiempos en tierra caliente.</p></div>
+    <div class="evento-card"><span class="evento-icon">🏢</span><h3>Retiro Empresarial</h3><p>Team building, reuniones de integración o simplemente premiar a su equipo. Desconecte y reconecte con la naturaleza.</p></div>
+    <div class="evento-card"><span class="evento-icon">💃</span><h3>Despedidas de Soltera/o</h3><p>Piscina, jacuzzi, BBQ y buena música. La despedida perfecta en tierra caliente con todo el grupo.</p></div>
+    <div class="evento-card"><span class="evento-icon">🌅</span><h3>Escapadas de Fin de Semana</h3><p>No necesita un motivo especial. Venga a descansar, jugar tejo, disfrutar la piscina y cargar pilas lejos del ruido de la ciudad.</p></div>
+  </div>
+  <div class="eventos-testimonial">
+    <p>"Celebramos nuestra boda en Villa Alejandría y fue <strong>exactamente lo que soñábamos</strong>. Jardín precioso, piscina iluminada, espacio para todos nuestros invitados. <strong>100% recomendado.</strong>"</p>
+    <p style="margin-top:12px; font-size:14px; opacity:0.7;">— Una pareja feliz que dijo "Sí" en Villa Alejandría 💍</p>
+  </div>
+  <div style="text-align:center; margin-top:36px;">
+    <a href="https://wa.me/573043045809?text=Hola,%20quiero%20cotizar%20un%20evento%20en%20Villa%20Alejandría" target="_blank"
+       style="display:inline-flex;align-items:center;gap:12px;background:#25D366;color:#fff;padding:16px 36px;border-radius:12px;font-size:16px;font-weight:800;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.4);">
+      <svg style="width:22px;height:22px;fill:#fff" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Cotizar mi evento por WhatsApp
+    </a>
+  </div>
+</section>
 
 <!-- AMENIDADES -->
-<section class="amenidades">
-  <div class="section-label">¿Qué tiene Villa Alejandría?</div>
-  <h2>Todo para disfrutar sin salir</h2>
-  <p class="subtitle">Cada rincón pensado para que su grupo descanse, se divierta y viva momentos inolvidables.</p>
+<section id="amenidades">
+  <p class="sec-label text-center">🏡 Las instalaciones</p>
+  <h2 class="sec-title text-center">Todo para disfrutar sin salir</h2>
+  <p class="sec-desc text-center" style="margin:0 auto 36px;">Cada rincón pensado para que su grupo descanse, se divierta y viva momentos inolvidables.</p>
   <div class="amen-grid">
-    <div class="amen-card">
-      <span class="amen-icon">🏊</span>
-      <h3>Piscina</h3>
-      <p>Piscina amplia para toda la familia. El complemento perfecto del calor de Mariquita.</p>
-    </div>
-    <div class="amen-card c2">
-      <span class="amen-icon">🛁</span>
-      <h3>Jacuzzi</h3>
-      <p>Relájese en el jacuzzi después de un día de actividades. Para adultos y jóvenes.</p>
-    </div>
-    <div class="amen-card c3">
-      <span class="amen-icon">🔥</span>
-      <h3>BBQ / Asadero</h3>
-      <p>Zona de asados equipada. Reuniones, cumpleaños y celebraciones con el sabor de la brasa.</p>
-    </div>
-    <div class="amen-card c4">
-      <span class="amen-icon">🎯</span>
-      <h3>Cancha de Tejo</h3>
-      <p>El deporte más colombiano. Torneos, apuestas amistosas y mucha diversión garantizada.</p>
-    </div>
-    <div class="amen-card c5">
-      <span class="amen-icon">⚽</span>
-      <h3>Cancha de Fútbol</h3>
-      <p>Para los amantes del balón. Organice su partido y disfrute rodeado de naturaleza.</p>
-    </div>
-    <div class="amen-card c6">
-      <span class="amen-icon">🎳</span>
-      <h3>Bolibranas</h3>
-      <p>Diversión para todas las edades. Un clásico colombiano que no puede faltar.</p>
-    </div>
-    <div class="amen-card">
-      <span class="amen-icon">🎲</span>
-      <h3>Juegos de Mesa</h3>
-      <p>Para las noches y los ratos de descanso. Parqués, dominó, cartas y más.</p>
-    </div>
-    <div class="amen-card c2">
-      <span class="amen-icon">🚗</span>
-      <h3>Parqueaderos</h3>
-      <p>Amplio estacionamiento privado y seguro dentro de la propiedad para todos los vehículos.</p>
-    </div>
+    <div class="amen-card"><span class="amen-icon">🏊</span><h3>Piscina</h3><p>Piscina amplia con iluminación multicolor para el día y la noche.</p></div>
+    <div class="amen-card"><span class="amen-icon">🛁</span><h3>Jacuzzi</h3><p>Iluminado y acogedor. Relájese después de un día de actividades.</p></div>
+    <div class="amen-card"><span class="amen-icon">📽️</span><h3>Pantalla Proyector</h3><p>Cine al aire libre, karaoke o transmisiones especiales en la piscina.</p></div>
+    <div class="amen-card"><span class="amen-icon">🔥</span><h3>BBQ / Asadero</h3><p>Zona de asados equipada para celebraciones con el sabor de la brasa.</p></div>
+    <div class="amen-card"><span class="amen-icon">🎯</span><h3>Cancha de Tejo</h3><p>El deporte más colombiano. Torneos y diversión garantizada.</p></div>
+    <div class="amen-card"><span class="amen-icon">⚽</span><h3>Cancha de Fútbol</h3><p>Organice su partido rodeado de naturaleza y verde.</p></div>
+    <div class="amen-card"><span class="amen-icon">🎳</span><h3>Bolibrana</h3><p>Diversión colombiana para todas las edades.</p></div>
+    <div class="amen-card"><span class="amen-icon">🎲</span><h3>Juegos de Mesa</h3><p>Parqués, dominó, cartas y más para las noches en familia.</p></div>
+    <div class="amen-card"><span class="amen-icon">🚗</span><h3>Parqueaderos</h3><p>Estacionamiento privado y seguro para todos los vehículos.</p></div>
   </div>
 </section>
 
 <!-- CABAÑAS -->
-<section class="cabanas">
-  <div class="section-label">Las cabañas</div>
-  <h2>2 cabañas completas · Hasta 30 personas</h2>
-  <p class="subtitle">Cada cabaña cuenta con 4 habitaciones privadas, baños y áreas comunes. Perfectas para grupos grandes.</p>
+<section style="background:#fff8f0; padding:64px 5%;" id="cabanas">
+  <p class="sec-label">🏡 Alojamiento</p>
+  <h2 class="sec-title">2 cabañas · Hasta 30 personas</h2>
+  <p class="sec-desc">Cada cabaña con 4 habitaciones privadas, baños y áreas comunes.</p>
   <div class="cabanas-grid">
     <div class="cabana-card">
-      <div class="cabana-header">
-        <h3>🌿 Cabaña 1</h3>
-        <p>Hasta 15 personas</p>
-      </div>
-      <div class="cabana-body">
-        <div class="cabana-feat"><span>🛏️</span> 4 habitaciones privadas</div>
-        <div class="cabana-feat"><span>🚿</span> Baños completos</div>
-        <div class="cabana-feat"><span>🍽️</span> Cocina y comedor</div>
-        <div class="cabana-feat"><span>📺</span> Sala de estar</div>
-        <div class="cabana-feat"><span>🏊</span> Acceso a piscina y jacuzzi</div>
-        <div class="cabana-feat"><span>✅</span> Todas las amenidades incluidas</div>
-      </div>
+      <h3>🌿 Cabaña 1</h3><span class="cabana-cap">Hasta 15 personas</span>
+      <ul class="cabana-features">
+        <li>🛏️ 4 habitaciones privadas</li><li>🚿 Baños completos</li>
+        <li>🍽️ Cocina y comedor</li><li>📺 Sala de estar</li>
+        <li>🏊 Acceso a piscina y jacuzzi</li><li>✅ Todas las amenidades incluidas</li>
+      </ul>
     </div>
     <div class="cabana-card">
-      <div class="cabana-header">
-        <h3>🌺 Cabaña 2</h3>
-        <p>Hasta 15 personas</p>
-      </div>
-      <div class="cabana-body">
-        <div class="cabana-feat"><span>🛏️</span> 4 habitaciones privadas</div>
-        <div class="cabana-feat"><span>🚿</span> Baños completos</div>
-        <div class="cabana-feat"><span>🍽️</span> Cocina y comedor</div>
-        <div class="cabana-feat"><span>📺</span> Sala de estar</div>
-        <div class="cabana-feat"><span>🏊</span> Acceso a piscina y jacuzzi</div>
-        <div class="cabana-feat"><span>✅</span> Todas las amenidades incluidas</div>
-      </div>
+      <h3>🌺 Cabaña 2</h3><span class="cabana-cap">Hasta 15 personas</span>
+      <ul class="cabana-features">
+        <li>🛏️ 4 habitaciones privadas</li><li>🚿 Baños completos</li>
+        <li>🍽️ Cocina y comedor</li><li>📺 Sala de estar</li>
+        <li>🏊 Acceso a piscina y jacuzzi</li><li>✅ Todas las amenidades incluidas</li>
+      </ul>
     </div>
   </div>
-  <div style="margin-top:28px; background:#fff; border-radius:14px; padding:24px 28px; max-width:820px; border-left:5px solid #f9e04b; box-shadow:0 3px 14px rgba(0,0,0,0.07);">
-    <strong style="font-size:17px; color:#0d3320;">💡 Reserve las 2 cabañas juntas</strong>
-    <p style="margin-top:8px; color:#555; font-size:15px; line-height:1.7;">Grupos de 16 a 30 personas pueden tomar las dos cabañas completas. Ideal para reuniones familiares, grupos de amigos, retiros empresariales y eventos especiales.</p>
+  <div class="juntas-box">
+    <h3>💡 Reserve las 2 cabañas juntas para su evento</h3>
+    <p>Grupos de 16 a 30 personas. Ideal para bodas, quinces, reuniones familiares y eventos especiales.<br>Uso exclusivo de toda la propiedad — jardines, piscina, jacuzzi, canchas y salones.</p>
   </div>
 </section>
 
-<!-- UBICACION -->
-<section class="ubicacion">
-  <div class="section-label">Dónde estamos</div>
-  <h2>Mariquita, Tolima 🌴</h2>
-  <p class="subtitle">A pocas horas de Bogotá. El destino de tierra caliente más querido de Colombia.</p>
-  <div class="mapa-placeholder">
-    <h3>📍 San Sebastián de Mariquita, Tolima</h3>
-    <p>Ciudad del mango, tierra de historia y calor. A solo 3–4 horas desde Bogotá por la vía Honda-Bogotá. Clima cálido todo el año, ideal para escaparse cualquier fin de semana.</p>
-    <a href="https://wa.me/573043045809?text=Hola,%20necesito%20las%20indicaciones%20para%20llegar%20a%20Villa%20Alejandría%20en%20Mariquita" target="_blank" style="display:inline-block; background:#25D366; color:#fff; padding:12px 28px; border-radius:9px; font-weight:700; font-size:15px; margin-top:4px;">
-      📍 Pedir indicaciones por WhatsApp
-    </a>
-  </div>
-</section>
-
-<!-- TURISMO CERCANO -->
-<section style="background:#fff; padding:64px 5%;">
-  <div class="section-label">Turismo cerca de Villa Alejandría</div>
-  <h2>Mariquita y alrededores — un destino completo</h2>
-  <p class="subtitle">A pocos minutos de las cabañas encontrará naturaleza, historia, fe y diversión. No hay que irse lejos para vivir una experiencia inolvidable.</p>
-  <div class="amen-grid">
-    <div class="amen-card">
-      <span class="amen-icon">💦</span>
-      <h3>Balnearios y cascadas</h3>
-      <p>La región cuenta con hermosos balnearios naturales y cascadas de aguas cristalinas rodeadas de vegetación tropical. Ideales para refrescarse y conectar con la naturaleza.</p>
+<!-- TURISMO -->
+<section class="turismo-bg" id="turismo">
+  <p class="sec-label text-center">🗺️ Alrededores</p>
+  <h2 class="sec-title text-center">Mariquita y alrededores — un destino completo</h2>
+  <p class="sec-desc text-center" style="margin:0 auto 36px;">A pocos minutos de las cabañas: naturaleza, historia, fe y diversión.</p>
+  <div class="turismo-grid">
+    <div class="tur-card"><div class="tur-img"><div class="tur-img-bg" style="background:linear-gradient(135deg,#7b3f00,#c97a3a);">⛪</div></div><div class="tur-body"><span class="tur-dist">📍 Honda · 20 min</span><h3>La Ermita — El Señor Milagroso</h3><p>La famosa iglesia colonial de <strong>La Ermita</strong>, hogar del <strong>Milagroso Señor de La Ermita</strong>. Un lugar de fe y devoción que convoca a miles de peregrinos de todo el país.</p></div></div>
+    <div class="tur-card"><div class="tur-img"><div class="tur-img-bg" style="background:linear-gradient(135deg,#1a3a5c,#2e6ca0);">🌉</div></div><div class="tur-body"><span class="tur-dist">📍 Honda · 20 min</span><h3>Honda — Ciudad de los Puentes</h3><p>Ciudad histórica cuna de <strong>Alfonso López Pumarejo</strong>. Recorra la <strong>Calle de las Trampas</strong>, la <strong>Catedral del Alto del Rosario</strong>, el <strong>Malecón</strong> y el <strong>Río Magdalena</strong>.</p></div></div>
+    <div class="tur-card"><div class="tur-img"><div class="tur-img-bg" style="background:linear-gradient(135deg,#3d1f00,#7a3f0a);">🌋</div></div><div class="tur-body"><span class="tur-dist">📍 Armero · 15 min</span><h3>Armero — Sitio de Memoria 1985</h3><p>El histórico <strong>Armero</strong> recuerda la tragedia del <strong>Nevado del Ruiz del 13 de noviembre de 1985</strong>. Un recorrido que conmueve profundamente.</p></div></div>
+    <div class="tur-card"><div class="tur-img"><div class="tur-img-bg" style="background:linear-gradient(135deg,#0d4f2e,#1a8a50);">💦</div></div><div class="tur-body"><span class="tur-dist">📍 Alrededores Mariquita</span><h3>Balnearios y Cascadas</h3><p>Las <strong>Cataratas de Medina</strong> y hermosos balnearios naturales de aguas cristalinas. Una visita obligada para los amantes del ecoturismo.</p></div></div>
+    <div class="tur-card"><div class="tur-img"><div class="tur-img-bg" style="background:linear-gradient(135deg,#005f8e,#00b8d4);">🏖️</div></div><div class="tur-body"><span class="tur-dist">📍 Norte del Tolima</span><h3>Sitios tipo "Cancún Tolimense"</h3><p>Balnearios con aguas turquesas, carpas y ambiente festivo. El Caribe colombiano en tierra caliente a precio colombiano.</p></div></div>
+    <div class="tur-card"><div class="tur-img"><div class="tur-img-bg" style="background:linear-gradient(135deg,#1a2a1a,#2d5016);">🏛️</div></div><div class="tur-body"><span class="tur-dist">📍 Falan, Tolima · 30 min</span><h3>Ciudad Perdida de Falan</h3><p>Vestigios de la llamada <strong>Ciudad Perdida</strong> de Falan. Un misterioso sitio arqueológico rodeado de selva y montaña.</p></div></div>
+    <div class="tur-card"><div class="tur-img"><div class="tur-img-bg" style="background:linear-gradient(135deg,#c97a00,#f9a825);">🥭</div></div><div class="tur-body"><span class="tur-dist">📍 San Sebastián de Mariquita</span><h3>Mariquita — Ciudad del Mango</h3><p>Pruebe el <strong>mango más dulce de Colombia</strong>, visite el parque central histórico y disfrute la gastronomía tolimense auténtica.</p></div></div>
+    <div class="tur-card" style="background:linear-gradient(135deg,#c0390a,#ff7b00,#ffd200);color:#fff;">
+      <div class="tur-img"><div class="tur-img-bg" style="background:rgba(0,0,0,0.15);">🧭</div></div>
+      <div class="tur-body"><h3 style="color:#fff;">Su guía local incluida</h3><p style="color:rgba(255,255,255,0.9);">Al reservar le orientamos sobre los mejores sitios, horarios, precios y cómo llegar. Conocemos la región.</p>
+      <a href="https://wa.me/573043045809?text=Hola,%20quiero%20información%20sobre%20los%20sitios%20turísticos%20cerca%20a%20Villa%20Alejandría" target="_blank" style="display:inline-block;margin-top:14px;background:#fff;color:#c0390a;padding:10px 20px;border-radius:8px;font-weight:700;font-size:13px;">📲 Pedir información</a></div>
     </div>
-    <div class="amen-card c2">
-      <span class="amen-icon">🌊</span>
-      <h3>Cataratas de Medina</h3>
-      <p>Espectaculares caídas de agua en un entorno natural único. Una visita obligada para los amantes del ecoturismo y la aventura al aire libre.</p>
-    </div>
-    <div class="amen-card c3">
-      <span class="amen-icon">🏖️</span>
-      <h3>Sitios tipo "Cancún"</h3>
-      <p>Balnearios con aguas turquesas, carpas, música y ambiente festivo. El Caribe colombiano en tierra caliente, a precio colombiano.</p>
-    </div>
-    <div class="amen-card c4">
-      <span class="amen-icon">⛪</span>
-      <h3>La Ermita — El Señor Milagroso</h3>
-      <p>La famosa iglesia de <strong>La Ermita</strong>, hogar del <strong>Milagroso Señor de La Ermita</strong>. Un lugar de fe y devoción que convoca a peregrinos de todo el país. Historia, arquitectura y espiritualidad en un solo lugar.</p>
-    </div>
-    <div class="amen-card c5">
-      <span class="amen-icon">🌋</span>
-      <h3>Armero — Sitio de Memoria</h3>
-      <p>A pocos minutos, el histórico Armero recuerda la tragedia del Nevado del Ruiz de 1985. Un recorrido que conmueve y que todo colombiano debe conocer.</p>
-    </div>
-    <div class="amen-card c6">
-      <span class="amen-icon">🥭</span>
-      <h3>Mariquita — Ciudad del Mango</h3>
-      <p>Pasee por la ciudad, pruebe el mango más dulce de Colombia, visite su parque central histórico y disfrute la gastronomía tolimense auténtica.</p>
-    </div>
-    <div class="amen-card c2">
-      <span class="amen-icon">🌉</span>
-      <h3>Honda — Ciudad de los Puentes</h3>
-      <p>A pocos kilómetros, <strong>Honda</strong> es una de las ciudades más históricas de Colombia. Cuna de <strong>Alfonso López Pumarejo</strong>, presidente de Colombia. Recorra la famosa <strong>Calle de las Trampas</strong> empedrada, admire la <strong>Catedral del Alto del Rosario</strong>, disfrute el hermoso <strong>Malecón</strong> y embarque en un tour por el majestuoso <strong>Río Magdalena</strong> para conocer su abundante flora y fauna.</p>
-    </div>
-    <div class="amen-card c3">
-      <span class="amen-icon">🏛️</span>
-      <h3>Ciudad Perdida — Falan, Tolima</h3>
-      <p>En el municipio de <strong>Falan</strong>, a pocos kilómetros de Mariquita, se encuentran los vestigios de lo que los lugareños llaman la <strong>Ciudad Perdida</strong>. Un misterioso sitio arqueológico e histórico rodeado de selva y montaña. Aventura, historia y naturaleza en uno.</p>
-    </div>
-  </div>
-  <div style="margin-top:32px; background:linear-gradient(135deg,#1a5c38,#2e8b57); border-radius:14px; padding:28px 32px; max-width:780px; color:#fff;">
-    <strong style="font-size:18px;">🗺️ Su guía local incluida</strong>
-    <p style="margin-top:10px; color:#b8e8cc; font-size:15px; line-height:1.7;">Al reservar en Villa Alejandría le orientamos sobre los mejores sitios para visitar, horarios, precios y cómo llegar. Conocemos la región y queremos que su viaje sea perfecto.</p>
-    <a href="https://wa.me/573043045809?text=Hola,%20quiero%20información%20sobre%20los%20sitios%20turísticos%20cerca%20a%20Villa%20Alejandría" target="_blank" style="display:inline-block; margin-top:16px; background:#f9e04b; color:#0d3320; padding:11px 26px; border-radius:8px; font-weight:700; font-size:15px;">Consultar por WhatsApp</a>
   </div>
 </section>
 
 <!-- ARMERO -->
-<section style="background: linear-gradient(160deg, #1a1a2e 0%, #16213e 100%); padding: 64px 5%; color: #fff;">
-  <div style="max-width: 780px;">
-    <div style="font-size:12px; text-transform:uppercase; letter-spacing:2.5px; font-weight:700; color:#f9e04b; margin-bottom:10px;">Historia cerca a nosotros</div>
-    <h2 style="color:#fff; margin-bottom:16px;">A minutos de Armero 🌋</h2>
-    <p style="font-size:17px; color:#a8c4e0; line-height:1.8; margin-bottom:18px;">
-      Villa Alejandría está ubicada cerca a <strong style="color:#f9e04b;">Armero, Tolima</strong> — uno de los lugares más históricos y emotivos de Colombia. El 13 de noviembre de 1985, la erupción del <strong style="color:#f9e04b;">Volcán Nevado del Ruiz</strong> sepultó la ciudad bajo un lahar, en una de las tragedias naturales más recordadas del país.
-    </p>
-    <p style="font-size:17px; color:#a8c4e0; line-height:1.8; margin-bottom:28px;">
-      Hoy, Armero es un <strong style="color:#fff;">sitio de memoria y reflexión</strong>. Miles de colombianos y visitantes internacionales llegan cada año a conocer su historia, caminar entre los vestigios de la ciudad y rendir homenaje a sus víctimas. Una visita que conmueve y no se olvida.
-    </p>
-    <div style="background:rgba(249,224,75,0.1); border:1.5px solid rgba(249,224,75,0.4); border-radius:12px; padding:20px 24px; display:inline-block;">
-      <strong style="color:#f9e04b; font-size:16px;">💡 Combine su estadía</strong>
-      <p style="color:#c8dff0; font-size:15px; margin-top:8px; line-height:1.6;">Descanse en las cabañas Villa Alejandría y visite Armero a pocos minutos. Una experiencia completa: descanso, naturaleza e historia colombiana en un solo viaje.</p>
+<section class="armero-bg" id="armero">
+  <div class="armero-inner">
+    <div class="armero-text">
+      <p class="sec-label">🌋 Historia cerca a nosotros</p>
+      <h2 class="sec-title" style="font-size:clamp(1.6rem,3vw,2.2rem);">A minutos de Armero</h2>
+      <p>Villa Alejandría está ubicada cerca a <strong>Armero, Tolima</strong> — uno de los lugares más históricos y emotivos de Colombia.</p>
+      <p>El <strong>13 de noviembre de 1985</strong>, la erupción del <strong>Volcán Nevado del Ruiz</strong> sepultó la ciudad bajo un lahar, en una de las tragedias naturales más recordadas del país.</p>
+      <p>Hoy, Armero es un <strong>sitio de memoria y reflexión</strong>. Miles de colombianos llegan cada año a rendir homenaje a sus víctimas.</p>
+      <p><em>Descanse en Villa Alejandría y visite Armero a pocos minutos.</em></p>
+    </div>
+    <div class="armero-img-box">
+      <div class="armero-img-placeholder">
+        <div class="big-emoji">🌋</div>
+        <p><strong style="color:#c9a0ff;font-size:18px;">Armero, Tolima</strong><br><br>Sitio de Memoria<br>13 de noviembre de 1985<br><br><em>Un lugar que Colombia no olvida</em></p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- PRECIOS -->
-<section class="precios" id="precios">
-  <div class="section-label">Tarifas</div>
-  <h2>Precios claros, sin sorpresas</h2>
-  <p class="subtitle">Pague por persona. Todas las amenidades incluidas. Sin costos ocultos.</p>
-  <div class="precio-grid">
+<section id="precios">
+  <p class="sec-label text-center">💰 Tarifas</p>
+  <h2 class="sec-title text-center">Precios claros, sin sorpresas</h2>
+  <p class="sec-desc text-center" style="margin:0 auto 36px;">Pague por persona. Todas las amenidades incluidas. Sin costos ocultos.</p>
+  <div class="precios-grid">
+    <div class="precio-card">
+      <p class="precio-plan">Por persona</p>
+      <p class="precio-monto">$80.000</p>
+      <p class="precio-unit">por noche</p>
+      <ul class="precio-includes">
+        <li>✅ Piscina incluida</li><li>✅ Jacuzzi incluido</li>
+        <li>✅ Todas las canchas</li><li>✅ Parqueadero</li>
+      </ul>
+    </div>
     <div class="precio-card featured">
-      <div class="precio-titulo">Tarifa por persona</div>
-      <div class="precio-valor">$80.000<small>/noche</small></div>
-      <div class="precio-desc">✅ Piscina incluida<br>✅ Jacuzzi incluido<br>✅ Canchas incluidas<br>✅ BBQ incluido</div>
+      <p class="precio-plan">Grupo de 20 personas</p>
+      <p class="precio-monto">$1.600.000</p>
+      <p class="precio-unit">por noche · 1 cabaña completa</p>
+      <ul class="precio-includes">
+        <li>✅ 4 habitaciones privadas</li><li>✅ Piscina + jacuzzi</li>
+        <li>✅ BBQ + canchas</li><li>✅ Todo incluido</li>
+      </ul>
     </div>
     <div class="precio-card">
-      <div class="precio-titulo">Grupo de 20 personas</div>
-      <div class="precio-valor">$1.600.000<small>/noche</small></div>
-      <div class="precio-desc">Una cabaña completa para su grupo. Ideal para familias.</div>
-    </div>
-    <div class="precio-card">
-      <div class="precio-titulo">Finca completa (30 p.)</div>
-      <div class="precio-valor">$2.400.000<small>/noche</small></div>
-      <div class="precio-desc">Las 2 cabañas completas. Para eventos y grupos grandes.</div>
+      <p class="precio-plan">Finca completa</p>
+      <p class="precio-monto">$2.400.000</p>
+      <p class="precio-unit">por noche · 30 personas · 2 cabañas</p>
+      <ul class="precio-includes">
+        <li>✅ 2 cabañas completas</li><li>✅ Uso exclusivo</li>
+        <li>✅ Ideal para eventos</li><li>✅ Todo incluido</li>
+      </ul>
     </div>
   </div>
-  <p style="margin-top:24px; font-size:14px; color:#888;">* Tarifas sujetas a disponibilidad. Consulte por WhatsApp fechas especiales y temporadas altas.</p>
+  <p class="precio-note">* Tarifas sujetas a disponibilidad. Consulte por WhatsApp fechas especiales, temporadas altas y tarifas para eventos.</p>
 </section>
 
-<!-- CTA -->
-<div class="cta">
-  <h2>¿Listo para escaparse? 🌴</h2>
-  <p>Consulte disponibilidad y reserve su fecha. Le respondemos de inmediato.</p>
-  <a class="cta-wa" href="https://wa.me/573043045809?text=Hola,%20quiero%20reservar%20las%20cabañas%20Villa%20Alejandría%20en%20Mariquita" target="_blank">
-    <svg style="width:24px;height:24px;fill:#fff;flex-shrink:0;" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <h2>¿Listo para vivir una experiencia inolvidable? 🌴</h2>
+  <p>Consulte disponibilidad y reserve su fecha ahora. Le respondemos de inmediato.</p>
+  <a class="cta-wa-big" href="https://wa.me/573043045809?text=Hola,%20quiero%20reservar%20las%20cabañas%20Villa%20Alejandría%20en%20Mariquita" target="_blank">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     +57 304 304 5809
   </a>
-</div>
+</section>
 
 <!-- FOOTER -->
 <footer>
-  <p style="color:#fff; font-weight:700; font-size:15px; margin-bottom:4px;">Villa Alejandría</p>
-  <p>Mariquita, Tolima · Colombia</p>
-  <p style="margin-top:6px;">WhatsApp: <a href="https://wa.me/573043045809" style="color:#5DCAA5;">304 304 5809</a></p>
-  <p style="margin-top:6px; font-size:13px; color:#4a8a6a;">© 2026 · ASESORÍAS Y CONSULTORÍAS EMPRESARIALES ACUÑA S.A.S.</p>
+  <p><strong>Villa Alejandría</strong> — Cr 18D N° 6-62, San Sebastián de Mariquita, Tolima · Colombia</p>
+  <p style="margin:6px 0;">WhatsApp: <a href="https://wa.me/573043045809">304 304 5809</a></p>
+  <p style="margin-top:12px; opacity:0.6;">© 2026 · <strong>ASESORÍAS Y CONSULTORÍAS EMPRESARIALES ACUÑA S.A.S.</strong></p>
 </footer>
 
+<script>
+const galleryImages = [
+  {src:"14.jpeg"},{src:"15.jpeg"},{src:"16.jpeg"},{src:"9.jpeg"},
+  {src:"3.jpeg"},{src:"6.jpeg"},{src:"5.jpeg"},{src:"2.jpeg"},
+  {src:"4.jpeg"},{src:"12.jpeg"},{src:"13.jpeg"},{src:"8.jpeg"},
+  {src:"10.jpeg"},{src:"7.jpeg"},{src:"1.jpeg"},{src:"11.jpeg"},{src:"17.jpeg"}
+];
+let lbIdx = 0;
+function openLightbox(idx) {
+  lbIdx = idx;
+  document.getElementById('lb-img').src = galleryImages[idx].src;
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLightbox() { document.getElementById('lightbox').classList.remove('open'); }
+function lbNav(dir) {
+  lbIdx = (lbIdx + dir + galleryImages.length) % galleryImages.length;
+  document.getElementById('lb-img').src = galleryImages[lbIdx].src;
+}
+document.getElementById('lightbox').addEventListener('click', function(e){ if(e.target===this) closeLightbox(); });
+document.addEventListener('keydown', function(e){
+  if(e.key==='Escape') closeLightbox();
+  if(e.key==='ArrowLeft') lbNav(-1);
+  if(e.key==='ArrowRight') lbNav(1);
+});
+</script>
 </body>
 </html>
