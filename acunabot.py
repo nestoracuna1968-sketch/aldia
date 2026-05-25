@@ -127,6 +127,24 @@ def es_consulta_cabanas(texto: str) -> bool:
 def manejar_texto(from_num: str, texto: str):
     estado = get_estado(from_num)
 
+    # ── Flujo cabañas: esperando datos de reserva ──────────────
+    if estado["paso"] == "cab_esperando_datos":
+        reset_estado(from_num)
+        enviar_texto(from_num,
+            "✅ *¡Recibido!* Néstor le confirma disponibilidad y precio en breve.\n\n"
+            "Mientras tanto puede ver la página completa:\n"
+            "👉 https://nestoracuna1968-sketch.github.io/aldia/cabanas.html 🌴"
+        )
+        notificar_nestor(
+            f"🏖️ DATOS RESERVA CABAÑA\nMensaje: {texto}\nWhatsApp: {from_num}"
+        )
+        return
+
+    # ── Flujo cabañas: ya mostró info/ubicación, mantener en Villa Alejandría ──
+    if estado["paso"] == "cab_flow":
+        enviar_menu_cabanas(from_num)
+        return
+
     # Flujo: esperando nombre de empresa
     if estado["paso"] == "esperando_empresa":
         estado["datos"]["empresa"] = texto.upper()
@@ -256,7 +274,7 @@ def manejar_boton(from_num: str, btn_id: str):
 
     # ── Cabañas ──────────────────────────────────────────────
     if btn_id == "cab_reservar":
-        reset_estado(from_num)
+        set_estado(from_num, {"paso": "cab_esperando_datos", "datos": {}})
         enviar_texto(from_num,
             "🌴 *Villa Alejandría — Reservas*\n\n"
             "Para reservar necesitamos:\n\n"
@@ -269,7 +287,7 @@ def manejar_boton(from_num: str, btn_id: str):
         return
 
     if btn_id == "cab_info":
-        reset_estado(from_num)
+        set_estado(from_num, {"paso": "cab_flow", "datos": {}})
         enviar_texto(from_num,
             "🏡 *Villa Alejandría — Info*\n\n"
             "📍 Mariquita, Tolima · 3h desde Bogotá\n"
@@ -286,7 +304,7 @@ def manejar_boton(from_num: str, btn_id: str):
         return
 
     if btn_id == "cab_ubicacion":
-        reset_estado(from_num)
+        set_estado(from_num, {"paso": "cab_flow", "datos": {}})
         enviar_texto(from_num,
             "📍 *Cómo llegar a Villa Alejandría*\n\n"
             "🏠 Dirección: Cr 18D N° 6-62\n"
@@ -305,7 +323,7 @@ def manejar_boton(from_num: str, btn_id: str):
 # ── Mensajes predefinidos ────────────────────────────────────
 def enviar_menu_cabanas(from_num: str):
     """Menú de bienvenida para consultas de Villa Alejandría."""
-    reset_estado(from_num)
+    set_estado(from_num, {"paso": "cab_flow", "datos": {}})
     enviar_botones(from_num,
         "🌴 ¡Bienvenido a *Villa Alejandría*! 🏖️\n\n"
         "Cabañas en *Mariquita, Tolima*.\n"
