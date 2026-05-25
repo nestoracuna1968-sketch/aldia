@@ -111,6 +111,19 @@ TRIGGERS_MENU = {
     "1","2","3","4","acunabot"
 }
 
+# Palabras clave que indican interés en Villa Alejandría cabañas
+TRIGGERS_CABANAS = {
+    "cabaña","cabañas","cabana","cabanas","villa","alejandria","alejandría",
+    "mariquita","piscina","jacuzzi","boda","matrimonio","quince","quinces",
+    "cumpleaños","fiesta","reservar","reserva","evento","eventos","hospedaje",
+    "alojamiento","vacaciones","finca","hospedarse","noche","noches","tolima"
+}
+
+def es_consulta_cabanas(texto: str) -> bool:
+    """Devuelve True si el texto contiene palabras clave de cabañas."""
+    palabras = texto.lower().replace(",","").replace(".","").split()
+    return any(p in TRIGGERS_CABANAS for p in palabras)
+
 def manejar_texto(from_num: str, texto: str):
     estado = get_estado(from_num)
 
@@ -154,7 +167,12 @@ def manejar_texto(from_num: str, texto: str):
         )
         return
 
-    # Cualquier otro texto → menú principal
+    # Detectar si es consulta de cabañas Villa Alejandría
+    if es_consulta_cabanas(texto):
+        enviar_menu_cabanas(from_num)
+        return
+
+    # Cualquier otro texto → menú principal AL DÍA
     enviar_menu_principal(from_num)
 
 
@@ -236,11 +254,71 @@ def manejar_boton(from_num: str, btn_id: str):
         )
         return
 
+    # ── Cabañas ──────────────────────────────────────────────
+    if btn_id == "cab_reservar":
+        reset_estado(from_num)
+        enviar_texto(from_num,
+            "🌴 *Villa Alejandría — Reservas*\n\n"
+            "Para reservar necesitamos:\n\n"
+            "📅 *¿Qué fecha le interesa?*\n"
+            "👥 *¿Cuántas personas son?*\n"
+            "🎉 *¿Qué van a celebrar?*\n\n"
+            "Escríbanos esos datos y le confirmamos disponibilidad y precio total de inmediato. 🏊"
+        )
+        notificar_nestor(f"🏖️ CONSULTA CABAÑAS\nWhatsApp: {from_num}")
+        return
+
+    if btn_id == "cab_info":
+        reset_estado(from_num)
+        enviar_texto(from_num,
+            "🏡 *Villa Alejandría — Info*\n\n"
+            "📍 Mariquita, Tolima · 3h desde Bogotá\n"
+            "🛏️ 2 cabañas · 4 hab c/u · Hasta 30 personas\n"
+            "🏊 Piscina · Jacuzzi · BBQ · Tejo · Fútbol · Bolibranas\n"
+            "📽️ Proyector · Juegos de mesa · Parqueadero\n\n"
+            "💰 *$80.000 por persona / noche*\n"
+            "▸ 20 personas → $1.600.000/noche\n"
+            "▸ 30 personas → $2.400.000/noche\n\n"
+            "✅ Bodas · Quinces · Cumpleaños · Reuniones familiares\n"
+            "✅ Reuniones de promoción · Retiros empresariales\n\n"
+            "👉 Vea la página completa:\nhttps://nestoracuna1968-sketch.github.io/aldia/cabanas.html"
+        )
+        return
+
+    if btn_id == "cab_ubicacion":
+        reset_estado(from_num)
+        enviar_texto(from_num,
+            "📍 *Cómo llegar a Villa Alejandría*\n\n"
+            "🏠 Dirección: Cr 18D N° 6-62\n"
+            "📌 San Sebastián de Mariquita, Tolima\n\n"
+            "🚗 Desde Bogotá por la vía Honda:\n"
+            "   Bogotá → La Dorada → Honda → Mariquita\n"
+            "   Tiempo aprox: 3 a 4 horas\n\n"
+            "📲 Escríbanos y le enviamos el pin de Google Maps."
+        )
+        return
+
     # Si no reconoció el botón → menú
     enviar_menu_principal(from_num)
 
 
 # ── Mensajes predefinidos ────────────────────────────────────
+def enviar_menu_cabanas(from_num: str):
+    """Menú de bienvenida para consultas de Villa Alejandría."""
+    reset_estado(from_num)
+    enviar_botones(from_num,
+        "🌴 ¡Bienvenido a *Villa Alejandría*! 🏖️\n\n"
+        "Cabañas en *Mariquita, Tolima*.\n"
+        "Piscina · Jacuzzi · BBQ · Canchas · Hasta 30 personas\n\n"
+        "💍 Bodas · 🌹 Quinces · 🎂 Cumpleaños · 👨‍👩‍👧‍👦 Reuniones\n\n"
+        "¿En qué le puedo ayudar?",
+        [
+            {"id": "cab_reservar",   "titulo": "📅 Reservar / Cotizar"},
+            {"id": "cab_info",       "titulo": "🏡 Ver info y precios"},
+            {"id": "cab_ubicacion",  "titulo": "📍 Cómo llegar"},
+        ]
+    )
+
 def enviar_menu_principal(from_num: str):
     reset_estado(from_num)
     enviar_botones(from_num,
