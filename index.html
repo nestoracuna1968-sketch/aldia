@@ -65,6 +65,43 @@
       font-size: 17px; font-weight: 600;
       border: 2px solid #4A9AD4; cursor: pointer;
     }
+    .btn-blue {
+      background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%); color: #fff;
+      padding: 16px 34px; border-radius: 10px;
+      font-size: 17px; font-weight: 700; border: none; cursor: pointer;
+      box-shadow: 0 4px 16px rgba(33,150,243,0.4);
+      transition: transform 0.2s;
+    }
+    .btn-blue:hover { transform: translateY(-2px); }
+    /* Sección "Cómo empezar" */
+    .start-section {
+      background: linear-gradient(135deg, #f0f7ff 0%, #e3f2fd 100%);
+      padding: 70px 5%; text-align: center;
+    }
+    .start-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;
+      max-width: 1100px; margin: 40px auto 0;
+    }
+    @media(max-width:760px){ .start-grid { grid-template-columns: 1fr; } }
+    .start-card {
+      background: #fff; border-radius: 14px; padding: 30px 24px;
+      box-shadow: 0 4px 20px rgba(24,95,165,0.10);
+      border: 1px solid #d0e3f5;
+    }
+    .start-card .num {
+      display: inline-block; width: 44px; height: 44px; line-height: 44px;
+      background: #185FA5; color: #fff; border-radius: 50%;
+      font-weight: 800; font-size: 20px; margin-bottom: 16px;
+    }
+    .start-card h3 { color: #185FA5; margin: 8px 0 12px; font-size: 19px; }
+    .start-card p { color: #475569; line-height: 1.55; font-size: 14px; }
+    .req-box {
+      background: #fff8e1; border-left: 5px solid #f59e0b;
+      padding: 18px 24px; margin: 30px auto 0; max-width: 760px;
+      text-align: left; border-radius: 6px;
+    }
+    .req-box h4 { color: #b45309; margin: 0 0 8px; font-size: 16px; }
+    .req-box ul { margin: 6px 0 0 18px; padding: 0; color: #78350f; font-size: 14px; line-height: 1.7; }
 
     /* SECTIONS */
     section { padding: 70px 5%; }
@@ -286,14 +323,68 @@
   <h1>El <span>gestor inteligente</span><br>de facturas que hace todo por usted</h1>
   <p>Un solo clic y AL DÍA <strong style="color:#5DCAA5;">baja, analiza, acusa, contabiliza, crea proveedores, aprende y le informa</strong>. Compatible con <strong>SIIGO Nube, World Office, Helisa, Alegra</strong> y muchos software más. ¿No quiere ni dar el clic? <strong style="color:#5DCAA5;">Prográmelo</strong> para que corra solo cada hora, cada día o cuando usted decida. <strong style="color:#5DCAA5;">Inteligencia artificial al servicio de su contabilidad.</strong></p>
   <div class="hero-btns">
-    <a class="btn-green" href="https://wa.me/573043045809?text=Quiero%20la%20prueba%20gratis%20de%20AL%20DÍA" target="_blank" style="display:inline-flex;align-items:center;gap:8px;">
+    <a class="btn-blue" href="https://drive.google.com/uc?export=download&id=1gbxKrjYGCSJVHMgtOq9hc3NSDkqEUriG" target="_blank" style="display:inline-flex;align-items:center;gap:8px;">
+      <span style="font-size:20px;">📥</span> Descargar AL DÍA
+    </a>
+    <a class="btn-green" href="https://wa.me/573043045809?text=Quiero%20la%20prueba%20gratis%20de%202%20días%20de%20AL%20DÍA" target="_blank" style="display:inline-flex;align-items:center;gap:8px;">
       <svg style="width:18px;height:18px;fill:#fff;flex-shrink:0;" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Prueba gratis 2 días
+      Pedir prueba gratis
     </a>
     <a class="btn-outline" href="#radian">Ver módulos</a>
     <a class="btn-outline" href="#precios">Ver precios</a>
   </div>
 </div>
+
+<!-- CÓMO EMPEZAR + DESCARGA -->
+<section class="start-section" id="descargar">
+  <div class="section-label" style="color:#185FA5;">Cómo empezar en 3 pasos</div>
+  <h2 style="color:#0F2A47; margin:8px 0 14px;">📥 Descargue AL DÍA y empiece HOY</h2>
+  <p style="color:#475569; max-width:680px; margin:0 auto 8px;">
+    Software 100% colombiano. Pague una sola vez al mes y úselo en su computador sin límites.
+    <strong>Prueba gratis de 2 días</strong> — escríbanos por WhatsApp y le emitimos su licencia.
+  </p>
+
+  <div class="start-grid">
+    <div class="start-card">
+      <div class="num">1</div>
+      <h3>📥 Descargue el programa</h3>
+      <p>Haga clic en el botón de descarga. El archivo <strong>AL_DIA.exe</strong> (~40 MB) se baja a su computador. También puede descargarlo desde el celular y pasarlo al PC después.</p>
+      <a class="btn-blue" href="https://drive.google.com/uc?export=download&id=1gbxKrjYGCSJVHMgtOq9hc3NSDkqEUriG" target="_blank" style="display:inline-block;margin-top:16px;font-size:15px;padding:12px 24px;">
+        📥 Descargar AL_DIA.exe
+      </a>
+    </div>
+
+    <div class="start-card">
+      <div class="num">2</div>
+      <h3>💬 Pida su licencia</h3>
+      <p>Escríbanos por WhatsApp con su <strong>NIT, razón social y correo</strong>. Le emitimos en minutos su licencia. Demo gratis de 2 días disponible para todos los nuevos clientes.</p>
+      <a class="btn-green" href="https://wa.me/573043045809?text=Hola,%20descargué%20AL%20DÍA%20y%20quiero%20mi%20licencia%20(NIT:%20...%20Razón%20social:%20...%20Correo:%20...)" target="_blank" style="display:inline-block;margin-top:16px;font-size:15px;padding:12px 24px;">
+        💬 Pedir licencia por WhatsApp
+      </a>
+    </div>
+
+    <div class="start-card">
+      <div class="num">3</div>
+      <h3>🔓 Active y use</h3>
+      <p>Al abrir AL DÍA por primera vez aparece la pantalla "Activar licencia". Cargue el archivo <strong>.lic</strong> que le enviamos. Listo — ya puede empezar a usar el programa.</p>
+      <div style="margin-top:16px;color:#64748B;font-size:13px;">
+        ✅ Sin instalación complicada<br>
+        ✅ Sin internet permanente<br>
+        ✅ Sus datos no salen de su PC
+      </div>
+    </div>
+  </div>
+
+  <div class="req-box">
+    <h4>⚠️ Requisitos importantes antes de usar:</h4>
+    <ul>
+      <li><strong>Sistema operativo:</strong> Windows 10 o Windows 11 (64-bit). NO corre en Mac, Linux, Android o iOS.</li>
+      <li><strong>Google Chrome instalado</strong> en el PC. Es indispensable para los módulos de descarga DIAN y acuse RADIAN. <a href="https://www.google.com/chrome/" target="_blank" style="color:#185FA5;">Descargar Chrome aquí</a>.</li>
+      <li><strong>Conexión a internet</strong> al arrancar (verificación de licencia y conexión a SIIGO/DIAN).</li>
+      <li><strong>Código de aplicación de Gmail (16 dígitos)</strong> — INDISPENSABLE si su contador usa funciones de correo. Lo obtiene gratis en <a href="https://myaccount.google.com/apppasswords" target="_blank" style="color:#185FA5;">myaccount.google.com/apppasswords</a> (requiere tener verificación en 2 pasos activada en su Gmail). NO es la contraseña normal — es un código especial para apps externas.</li>
+    </ul>
+  </div>
+</section>
 
 <!-- FEATURES -->
 <section class="features">
@@ -326,7 +417,7 @@
     <div class="feature-card">
       <span class="feature-icon">📥</span>
       <h3>Descarga automática DIAN</h3>
-      <p>Se conecta al portal DIAN con su <strong>token o certificado digital</strong> y baja todos los XMLs, PDFs y el Excel oficial. Sin digitar nada.</p>
+      <p>Se conecta <strong>automáticamente</strong> al portal DIAN y baja todos los XMLs, PDFs y el Excel oficial. Sin digitar nada, sin esfuerzo.</p>
     </div>
 
     <div class="feature-card c-orange">
