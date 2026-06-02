@@ -116,11 +116,10 @@
     /* FEATURES GRID */
     .features { background: #fff; }
     .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 22px;
+      display: flex; flex-wrap: wrap; gap: 22px; justify-content: center;
     }
     .feature-card {
+      flex: 0 1 300px;
       background: #f7f9fc; border-radius: 14px;
       padding: 28px 24px; border-top: 5px solid #185FA5;
       transition: transform .15s;
