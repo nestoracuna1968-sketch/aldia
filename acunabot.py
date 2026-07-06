@@ -36,6 +36,11 @@ PORT            = int(os.getenv("PORT", 5000))
 
 API_URL = f"https://graph.facebook.com/v19.0/{PHONE_NUMBER_ID}/messages"
 
+# ── Enlaces ALDIAERP ─────────────────────────────────────────
+REGISTRO_URL = "https://app.aldiaerp.com/app?registro=1"   # prueba gratis self-service
+WEB_URL      = "https://aldiaerp.com"
+PRECIOS_URL  = "https://aldiaerp.com/precios/"
+
 # ── Estado de conversaciones en memoria ─────────────────────
 # Diccionario: numero → {"paso": str, "datos": dict, "ts": float}
 _estados: dict = {}
@@ -190,7 +195,7 @@ def manejar_texto(from_num: str, texto: str):
         enviar_menu_cabanas(from_num)
         return
 
-    # Cualquier otro texto → menú principal AL DÍA
+    # Cualquier otro texto → menú principal ALDIAERP
     enviar_menu_principal(from_num)
 
 
@@ -199,11 +204,18 @@ def manejar_boton(from_num: str, btn_id: str):
 
     # ── Menú principal ──────────────────────────────────────
     if btn_id == "btn_prueba":
-        estado = {"paso": "esperando_empresa", "datos": {}}
-        set_estado(from_num, estado)
+        reset_estado(from_num)
         enviar_texto(from_num,
-            "¡Perfecto! 🎉 Vamos a activar su prueba gratis de 2 días.\n\n"
-            "📋 ¿Cuál es el nombre o razón social de su empresa?"
+            "¡Perfecto! 🎉 Su *prueba gratis de 30 días* se activa usted "
+            "mismo en 2 minutos, sin instalar nada:\n\n"
+            f"👉 {REGISTRO_URL}\n\n"
+            "1️⃣ Registre su empresa (nombre, NIT y correo)\n"
+            "2️⃣ Confirme el correo de verificación\n"
+            "3️⃣ Listo: entra a su consola y ALDIAERP empieza a trabajar 🚀\n\n"
+            "¿Quiere que *Néstor* lo acompañe en el registro? Escriba *sí*."
+        )
+        notificar_nestor(
+            f"🆕 LEAD PRUEBA GRATIS 30d\nSe envió el link de registro.\nWhatsApp: {from_num}"
         )
         return
 
@@ -243,21 +255,26 @@ def manejar_boton(from_num: str, btn_id: str):
 
     # ── Flujo precios: cantidad de empresas ────────────────
     if btn_id == "p_1":
-        enviar_cierre_precios(from_num, "1 empresa", "$250.000/mes")
+        enviar_cierre_precios(from_num, "1 empresa", "$100.000/mes")
         return
     if btn_id == "p_2_3":
-        enviar_cierre_precios(from_num, "2 a 3 empresas", "$400.000 – $550.000/mes")
+        enviar_cierre_precios(from_num, "2 a 9 empresas", "$80.000 – $100.000 por NIT")
         return
     if btn_id == "p_mas":
-        enviar_cierre_precios(from_num, "4 o más empresas", "$800.000 – $1.100.000/mes")
+        enviar_cierre_precios(from_num, "paquete de 10 o 20 NITs", "$700.000 – $1.200.000/mes")
         return
 
     # ── Cierre precios ──────────────────────────────────────
     if btn_id == "cta_prueba":
-        estado = {"paso": "esperando_empresa", "datos": {}}
-        set_estado(from_num, estado)
+        reset_estado(from_num)
         enviar_texto(from_num,
-            "📋 ¿Cuál es el nombre o razón social de su empresa?"
+            "¡Excelente! 🎉 Active su *prueba gratis de 30 días* usted mismo:\n\n"
+            f"👉 {REGISTRO_URL}\n\n"
+            "Registra su empresa, confirma el correo y entra a su consola. "
+            "Si quiere que *Néstor* lo acompañe, escriba *sí*. 🙏"
+        )
+        notificar_nestor(
+            f"🆕 LEAD PRUEBA GRATIS 30d (desde precios)\nWhatsApp: {from_num}"
         )
         return
 
@@ -340,13 +357,14 @@ def enviar_menu_cabanas(from_num: str):
 def enviar_menu_principal(from_num: str):
     reset_estado(from_num)
     enviar_botones(from_num,
-        "👋 Bienvenido a *AcunaBot* 🤖\n\n"
-        "Software colombiano para descargar, contabilizar y acusar "
-        "facturas electrónicas DIAN automáticamente.\n"
-        "Compatible con *SIIGO Nube* y *World Office*.\n\n"
+        "👋 Bienvenido a *ALDIAERP* 🤖\n\n"
+        "El ERP en la nube que *baja sus facturas de la DIAN solo*, "
+        "las contabiliza con *inteligencia artificial* y le arma sus "
+        "informes, impuestos y nómina.\n"
+        "Para *cualquier empresa* — comercio, servicios, industria.\n\n"
         "¿En qué le puedo ayudar?",
         [
-            {"id": "btn_prueba",  "titulo": "🆓 Prueba gratis 2 días"},
+            {"id": "btn_prueba",  "titulo": "🆓 Prueba gratis 30 días"},
             {"id": "btn_precios", "titulo": "💰 Ver precios"},
             {"id": "btn_soporte", "titulo": "🔧 Soporte técnico"},
         ]
@@ -354,20 +372,22 @@ def enviar_menu_principal(from_num: str):
 
 def enviar_precios(from_num: str):
     enviar_botones(from_num,
-        "💰 *Planes AL DÍA — Todo incluido*\n\n"
-        "▸ Prueba gratis → 2 días\n"
-        "▸ 1 empresa      → *$250.000/mes*\n"
-        "▸ 2 empresas     → *$400.000/mes*\n"
-        "▸ 3 empresas     → *$550.000/mes*\n"
-        "▸ 4–7 empresas   → *$800.000/mes*\n"
-        "▸ 8–12 empresas  → *$1.100.000/mes*\n\n"
-        "✅ Todas las funciones incluidas\n"
-        "✅ Sin contratos de permanencia\n\n"
-        "¿Cuántas empresas maneja actualmente?",
+        "💰 *Planes ALDIAERP — por NIT (empresa)*\n\n"
+        "▸ Prueba gratis → *30 días*\n"
+        "▸ Desde *$100.000/mes* por empresa\n\n"
+        "📦 *Paquetes para contadores* (baja por volumen):\n"
+        "▸ 1 NIT   → *$100.000/mes*\n"
+        "▸ 5 NITs  → *$400.000/mes*  (≈ $80.000 c/u)\n"
+        "▸ 10 NITs → *$700.000/mes*  (≈ $70.000 c/u)\n"
+        "▸ 20 NITs → *$1.200.000/mes* (≈ $60.000 c/u)\n\n"
+        "➕ Add-ons Nómina / Exógena → +$40.000/NIT\n"
+        "✅ Usuarios *ilimitados* sin costo\n"
+        "✅ Anual = *2 meses gratis* · sin permanencia\n\n"
+        "¿Cuántas empresas maneja?",
         [
             {"id": "p_1",   "titulo": "1 empresa"},
-            {"id": "p_2_3", "titulo": "2 a 3 empresas"},
-            {"id": "p_mas", "titulo": "4 o más"},
+            {"id": "p_2_3", "titulo": "2 a 9 empresas"},
+            {"id": "p_mas", "titulo": "10 o más"},
         ]
     )
 
